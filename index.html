@@ -178,6 +178,93 @@
             background-color: var(--white);
         }
 
+        .services .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .services-left {
+            padding-right: 40px;
+        }
+
+        .services-left .section-title {
+            text-align: left;
+            margin-bottom: 30px;
+            font-size: 3rem;
+        }
+
+        .services-intro {
+            font-size: 1.1rem;
+            color: var(--warm-gray);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .services-left .cta-button {
+            background-color: transparent;
+            color: var(--navy-blue);
+            border: 2px solid var(--navy-blue);
+            border-radius: 0;
+            padding: 12px 30px;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .services-left .cta-button:hover {
+            background-color: var(--navy-blue);
+            color: var(--white);
+        }
+
+        .services-right {
+            padding-left: 40px;
+        }
+
+        .services-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-item {
+            padding: 30px 0;
+            border-bottom: 1px solid #e5e5e5;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .service-item:last-child {
+            border-bottom: none;
+        }
+
+        .service-item:hover {
+            background-color: rgba(6, 36, 73, 0.02);
+            padding-left: 10px;
+        }
+
+        .service-item h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--navy-blue);
+            margin: 0;
+        }
+
+        .service-arrow {
+            color: var(--navy-blue);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-item:hover .service-arrow {
+            transform: translateX(5px);
+        }
+
+        /* General Section Title */
         .section-title {
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
@@ -185,51 +272,6 @@
             color: var(--navy-blue);
             text-align: center;
             margin-bottom: 60px;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .services-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--warm-gray);
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
-
-        .services-cta {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .service-card {
-            text-align: center;
-            padding: 40px 20px;
-            background-color: var(--ivory);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-card h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            color: var(--navy-blue);
-            margin-bottom: 20px;
-        }
-
-        .service-card p {
-            color: var(--warm-gray);
-            line-height: 1.7;
         }
 
         /* Approach Section */
@@ -435,7 +477,25 @@
                 font-size: 2rem;
             }
 
-            .services-grid, .transactions-grid {
+            .services .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-left {
+                padding-right: 0;
+            }
+
+            .services-left .section-title {
+                text-align: center;
+                font-size: 2rem;
+            }
+
+            .services-right {
+                padding-left: 0;
+            }
+
+            .transactions-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -608,28 +668,30 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Our Services</h2>
-            <p class="services-intro">Our team of experienced professionals provide clients with tailored solutions for their capital needs to meet and exceed their goals. The team at Valcrest Capital provides access to the capital markets through a suite of products and services.</p>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Investment Banking & Capital Markets</h3>
-                    <p>Growth equity, private placements, and capital stack optimization for emerging operators and institutional roll-ups.</p>
-                </div>
-                <div class="service-card">
-                    <h3>M&A Advisory</h3>
-                    <p>Buy- and sell-side transaction support, including recapitalizations and consolidation strategy.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Debt Placement</h3>
-                    <p>Bridge, mezzanine, and permanent financing solutions tailored to real estate, consumer, and industrial sectors.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Strategic Advisory</h3>
-                    <p>Corporate development, strategic partnerships, and capital structure advisory for high-growth companies.</p>
-                </div>
-            </div>
-            <div class="services-cta">
+            <div class="services-left">
+                <h2 class="section-title">Our Services</h2>
+                <p class="services-intro">Our team of experienced professionals provide clients with tailored solutions for their capital needs to meet and exceed their goals. The team at Valcrest Capital provides access to the capital markets through a suite of products and services.</p>
                 <a href="#contact" class="cta-button">Learn More</a>
+            </div>
+            <div class="services-right">
+                <div class="services-list">
+                    <div class="service-item">
+                        <h3>Investment Banking & Capital Markets</h3>
+                        <span class="service-arrow">&#8594;</span>
+                    </div>
+                    <div class="service-item">
+                        <h3>M&A Advisory</h3>
+                        <span class="service-arrow">&#8594;</span>
+                    </div>
+                    <div class="service-item">
+                        <h3>Debt Placement</h3>
+                        <span class="service-arrow">&#8594;</span>
+                    </div>
+                    <div class="service-item">
+                        <h3>Strategic Advisory</h3>
+                        <span class="service-arrow">&#8594;</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
