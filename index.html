@@ -292,9 +292,6 @@
         .service-item {
             padding: 30px 0;
             border-bottom: 1px solid #e5e5e5;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             cursor: pointer;
             transition: all 0.3s ease;
         }
@@ -306,6 +303,12 @@
         .service-item:hover {
             background-color: rgba(6, 36, 73, 0.02);
             padding-left: 10px;
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .service-item h3 {
@@ -324,6 +327,29 @@
 
         .service-item:hover .service-arrow {
             transform: translateX(5px);
+        }
+
+        .service-item.active .service-arrow {
+            transform: rotate(90deg);
+        }
+
+        .service-description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0;
+        }
+
+        .service-description.expanded {
+            max-height: 200px;
+            padding: 20px 0 0 0;
+        }
+
+        .service-description p {
+            color: var(--warm-gray);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
         }
 
         /* General Section Title */
@@ -796,20 +822,40 @@
             <div class="services-right">
                 <div class="services-list">
                     <div class="service-item">
-                        <h3>Investment Banking & Capital Markets</h3>
-                        <span class="service-arrow">&#8594;</span>
+                        <div class="service-header">
+                            <h3>Investment Banking & Capital Markets</h3>
+                            <span class="service-arrow">&#8594;</span>
+                        </div>
+                        <div class="service-description">
+                            <p>We provide comprehensive capital raising solutions including IPOs, private placements, and debt financing. Our expertise spans across all stages of growth from emerging companies to established enterprises.</p>
+                        </div>
                     </div>
                     <div class="service-item">
-                        <h3>Institutional Sales</h3>
-                        <span class="service-arrow">&#8594;</span>
+                        <div class="service-header">
+                            <h3>Institutional Sales</h3>
+                            <span class="service-arrow">&#8594;</span>
+                        </div>
+                        <div class="service-description">
+                            <p>Our institutional sales team connects high-quality investment opportunities with sophisticated investors. We maintain deep relationships with pension funds, hedge funds, and family offices.</p>
+                        </div>
                     </div>
                     <div class="service-item">
-                        <h3>Trading</h3>
-                        <span class="service-arrow">&#8594;</span>
+                        <div class="service-header">
+                            <h3>Trading</h3>
+                            <span class="service-arrow">&#8594;</span>
+                        </div>
+                        <div class="service-description">
+                            <p>We offer best-in-class execution services across equity and fixed income markets. Our trading desk provides liquidity and market-making capabilities for institutional clients.</p>
+                        </div>
                     </div>
                     <div class="service-item">
-                        <h3>Research</h3>
-                        <span class="service-arrow">&#8594;</span>
+                        <div class="service-header">
+                            <h3>Research</h3>
+                            <span class="service-arrow">&#8594;</span>
+                        </div>
+                        <div class="service-description">
+                            <p>Our research analysts provide in-depth market analysis and investment insights across key sectors. We deliver actionable intelligence to support informed investment decisions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -911,5 +957,30 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const serviceItems = document.querySelectorAll('.service-item');
+            
+            serviceItems.forEach(item => {
+                const header = item.querySelector('.service-header');
+                const description = item.querySelector('.service-description');
+                
+                header.addEventListener('click', function() {
+                    // Close all other items
+                    serviceItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.service-description').classList.remove('expanded');
+                        }
+                    });
+                    
+                    // Toggle current item
+                    item.classList.toggle('active');
+                    description.classList.toggle('expanded');
+                });
+            });
+        });
+    </script>
 </body>
 </html> 
