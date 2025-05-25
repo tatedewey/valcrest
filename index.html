@@ -615,6 +615,28 @@
                 grid-template-columns: 1fr;
             }
 
+            .transactions .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-left {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            .contact-left h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-right {
+                padding-left: 0;
+            }
+
+            .calendly-inline-widget {
+                height: 600px !important;
+            }
+
             .team-grid {
                 grid-template-columns: 1fr;
             }
@@ -801,51 +823,60 @@
             color: var(--navy-blue);
         }
 
-        /* Transactions Section */
+        /* Transactions Section - Now Contact Section */
         .transactions {
             padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .transactions-intro {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--warm-gray);
-            max-width: 800px;
-            margin: 0 auto 40px;
-            line-height: 1.7;
-        }
-
-        .transactions-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .transaction-card {
-            text-align: center;
-            padding: 40px 20px;
             background-color: var(--ivory);
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-            border-left: 4px solid var(--gold);
         }
 
-        .transaction-card:hover {
-            transform: translateY(-5px);
+        .transactions .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
         }
 
-        .transaction-card h3 {
+        .contact-left {
+            padding-right: 40px;
+        }
+
+        .contact-left h2 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-size: 3rem;
+            font-weight: 600;
             color: var(--navy-blue);
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            line-height: 1.2;
         }
 
-        .transaction-card p {
+        .contact-left p {
+            font-size: 1.2rem;
             color: var(--warm-gray);
             line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .contact-left .cta-button {
+            background-color: var(--navy-blue);
+            color: var(--white);
+            border: 2px solid var(--navy-blue);
+            padding: 15px 35px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-left .cta-button:hover {
+            background-color: var(--white);
+            color: var(--navy-blue);
+        }
+
+        .contact-right {
+            padding-left: 40px;
+        }
+
+        .calendly-inline-widget {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(6, 36, 73, 0.1);
         }
     </style>
 </head>
@@ -954,28 +985,19 @@
         </div>
     </section>
 
-    <!-- Transactions Section -->
+    <!-- Contact Section -->
     <section class="transactions" id="transactions">
         <div class="container">
-            <h2 class="section-title">Recent Transactions</h2>
-            <p class="transactions-intro">Valcrest Capital has successfully completed transactions across various sectors, delivering exceptional results for our clients.</p>
-            <div class="transactions-grid">
-                <div class="transaction-card">
-                    <h3>Technology Sector</h3>
-                    <p>$25M Series B funding round for emerging SaaS platform, connecting growth capital with innovative technology solutions.</p>
-                </div>
-                <div class="transaction-card">
-                    <h3>Real Estate</h3>
-                    <p>$50M debt placement for commercial real estate development, structuring optimal financing for large-scale projects.</p>
-                </div>
-                <div class="transaction-card">
-                    <h3>Consumer Goods</h3>
-                    <p>Strategic M&A advisory for consumer brand acquisition, facilitating successful exit for founding team.</p>
-                </div>
-                <div class="transaction-card">
-                    <h3>Healthcare</h3>
-                    <p>$15M growth equity placement for healthcare services company, enabling rapid market expansion.</p>
-                </div>
+            <div class="contact-left">
+                <h2>Connect with us.<br>We want to hear from you.</h2>
+                <p>Looking to raise capital, execute a transaction, or explore strategic options? We're ready to put our experience to work for you.</p>
+                <a href="mailto:contact@valcrestcapital.com" class="cta-button">Contact Us</a>
+            </div>
+            <div class="contact-right">
+                <!-- Calendly inline widget begin -->
+                <div class="calendly-inline-widget" data-url="https://calendly.com/tate-valcrestcapital/30min" style="min-width:320px;height:700px;"></div>
+                <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+                <!-- Calendly inline widget end -->
             </div>
         </div>
     </section>
