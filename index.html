@@ -403,55 +403,6 @@
             line-height: 1.7;
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            background-color: var(--navy-blue);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .contact .section-title {
-            color: var(--white);
-            margin-bottom: 30px;
-        }
-
-        .contact p {
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            line-height: 1.8;
-        }
-
-        .contact .cta-button {
-            background-color: var(--gold);
-            color: var(--navy-blue);
-            border-color: var(--gold);
-        }
-
-        .contact .cta-button:hover {
-            background-color: var(--white);
-            color: var(--navy-blue);
-        }
-
-        .contact-info {
-            margin-top: 50px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-info a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            color: var(--gold);
-        }
-
         /* Footer */
         footer {
             background-color: var(--navy-blue);
@@ -623,11 +574,6 @@
                 height: 600px !important;
             }
 
-            .contact-info {
-                flex-direction: column;
-                gap: 20px;
-            }
-
             .footer-nav {
                 flex-direction: column;
                 gap: 15px;
@@ -768,7 +714,7 @@
             max-width: 600px;
             margin: 0;
             text-align: left;
-            padding: 80px 0;
+            padding: 60px 0;
             color: var(--white);
         }
 
@@ -866,7 +812,9 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">Valcrest Capital</a>
+            <a href="#" class="logo" style="display: flex; align-items: center; gap: 12px;">
+                <img src="Logo2.png" alt="Valcrest Capital Logo" style="height: 48px; width: auto; display: block;" />
+            </a>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Capabilities</a></li>
@@ -961,7 +909,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="transactions" id="transactions">
+    <section class="transactions" id="contact">
         <div class="container">
             <div class="contact-left">
                 <h2>Connect with us.<br>We want to hear from you.</h2>
@@ -973,19 +921,6 @@
                 <div class="calendly-inline-widget" data-url="https://calendly.com/tate-valcrestcapital/30min" style="min-width:320px;height:700px;"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Connect with us.<br>We want to hear from you.</h2>
-            <p>Looking to raise capital, execute a transaction, or explore strategic options? We're ready to put our experience to work for you.</p>
-            <a href="mailto:contact@valcrestcapital.com" class="cta-button">Contact Us</a>
-            <div class="contact-info">
-                <a href="mailto:contact@valcrestcapital.com">contact@valcrestcapital.com</a>
-                <a href="https://linkedin.com/company/valcrestcapital" target="_blank">LinkedIn</a>
             </div>
         </div>
     </section>
