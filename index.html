@@ -7,6 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <meta name="cache-bust" content="20250103-1430">
+    <meta name="version" content="20250103-1600">
     <title>Valcrest Capital - Boutique Investment Banking & Capital Advisory</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1554,15 +1555,18 @@
             // Mobile contact button functionality
             function updateContactButton() {
                 const contactButton = document.querySelector('.contact-button');
+                console.log('Updating contact button, screen width:', window.innerWidth);
                 if (contactButton) {
                     // Always keep the email functionality, but add a note for mobile users
                     contactButton.href = 'mailto:contact@valcrestcapital.com';
                     if (window.innerWidth <= 768) {
                         contactButton.href = 'https://calendly.com/tate-valcrestcapital/30min';
                         contactButton.textContent = 'Book a Meeting';
+                        console.log('Set mobile button: Book a Meeting');
                     } else {
                         contactButton.href = 'mailto:contact@valcrestcapital.com';
                         contactButton.textContent = 'Contact Us';
+                        console.log('Set desktop button: Contact Us');
                     }
                 }
             }
