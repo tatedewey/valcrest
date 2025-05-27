@@ -755,11 +755,20 @@
             }
 
             .contact-right {
-                display: none !important;
+                display: block !important;
+                padding-left: 0 !important;
+                width: 100% !important;
+                order: 2 !important;
+                margin-top: 20px !important;
             }
 
             .calendly-inline-widget {
-                display: none !important;
+                display: block !important;
+                min-width: 100% !important;
+                width: 100% !important;
+                height: 450px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
             }
 
             .footer-nav {
@@ -831,7 +840,20 @@
             }
 
             .contact-right {
-                display: none !important;
+                display: block !important;
+                padding-left: 0 !important;
+                width: 100% !important;
+                order: 2 !important;
+                margin-top: 20px !important;
+            }
+
+            .calendly-inline-widget {
+                display: block !important;
+                min-width: 100% !important;
+                width: 100% !important;
+                height: 450px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
             }
         }
 
@@ -956,11 +978,20 @@
             }
 
             .contact-right {
-                display: none !important;
+                display: block !important;
+                padding-left: 0 !important;
+                width: 100% !important;
+                order: 2 !important;
+                margin-top: 20px !important;
             }
 
             .calendly-inline-widget {
-                display: none !important;
+                display: block !important;
+                min-width: 100% !important;
+                width: 100% !important;
+                height: 400px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
             }
         }
 
@@ -1052,11 +1083,20 @@
             }
 
             .contact-right {
-                display: none !important;
+                display: block !important;
+                padding-left: 0 !important;
+                width: 100% !important;
+                order: 2 !important;
+                margin-top: 20px !important;
             }
 
             .calendly-inline-widget {
-                display: none !important;
+                display: block !important;
+                min-width: 100% !important;
+                width: 100% !important;
+                height: 400px !important;
+                border-radius: 8px !important;
+                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
             }
         }
 
@@ -1115,11 +1155,20 @@
             }
 
             .contact-right {
-                display: none !important;
+                display: block !important;
+                padding-left: 0 !important;
+                width: 100% !important;
+                order: 2 !important;
+                margin-top: 15px !important;
             }
 
             .calendly-inline-widget {
-                display: none !important;
+                display: block !important;
+                min-width: 100% !important;
+                width: 100% !important;
+                height: 350px !important;
+                border-radius: 6px !important;
+                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
             }
         }
 
@@ -1285,12 +1334,20 @@
         }
 
         .contact-right {
-            padding-left: 40px;
+            display: block !important;
+            padding-left: 0 !important;
+            width: 100% !important;
+            order: 2 !important;
+            margin-top: 20px !important;
         }
 
         .calendly-inline-widget {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(6, 36, 73, 0.1);
+            display: block !important;
+            min-width: 100% !important;
+            width: 100% !important;
+            height: 450px !important;
+            border-radius: 8px !important;
+            box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
         }
     </style>
 </head>
@@ -1497,12 +1554,14 @@
             // Mobile contact button functionality
             function updateContactButton() {
                 const contactButton = document.querySelector('.contact-button');
-                if (contactButton && window.innerWidth <= 430) {
-                    contactButton.href = 'https://calendly.com/tate-valcrestcapital/30min';
-                    contactButton.textContent = 'Schedule Meeting';
-                } else if (contactButton) {
+                if (contactButton) {
+                    // Always keep the email functionality, but add a note for mobile users
                     contactButton.href = 'mailto:contact@valcrestcapital.com';
-                    contactButton.textContent = 'Contact Us';
+                    if (window.innerWidth <= 768) {
+                        contactButton.textContent = 'Email Us';
+                    } else {
+                        contactButton.textContent = 'Contact Us';
+                    }
                 }
             }
 
