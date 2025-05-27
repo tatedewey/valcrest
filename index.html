@@ -1558,8 +1558,10 @@
                     // Always keep the email functionality, but add a note for mobile users
                     contactButton.href = 'mailto:contact@valcrestcapital.com';
                     if (window.innerWidth <= 768) {
-                        contactButton.textContent = 'Email Us';
+                        contactButton.href = 'https://calendly.com/tate-valcrestcapital/30min';
+                        contactButton.textContent = 'Book a Meeting';
                     } else {
+                        contactButton.href = 'mailto:contact@valcrestcapital.com';
                         contactButton.textContent = 'Contact Us';
                     }
                 }
