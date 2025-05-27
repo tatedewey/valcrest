@@ -109,10 +109,6 @@
             align-items: center;
             padding: 140px 0 80px;
             overflow: hidden;
-            background-image: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
         }
 
         .hero-video {
@@ -1374,7 +1370,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto" webkit-playsinline="true">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" webkit-playsinline="true" disablepictureinpicture>
             <source src="nycsky1.mp4" type="video/mp4">
             <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
             <!-- Fallback for browsers that don't support video -->
@@ -1579,48 +1575,55 @@
             function forceVideoPlay() {
                 const video = document.querySelector('.hero-video');
                 if (video) {
-                    // Handle video loading errors
-                    video.addEventListener('error', function() {
-                        console.log('Video failed to load, using fallback background image');
-                        video.style.display = 'none';
-                    });
-
-                    video.addEventListener('loadeddata', function() {
-                        console.log('Video loaded successfully');
-                        video.style.display = 'block';
-                    });
-
-                    // Try to play the video
-                    const playPromise = video.play();
+                    // Ensure video is visible
+                    video.style.display = 'block';
                     
-                    if (playPromise !== undefined) {
-                        playPromise.then(() => {
-                            // Video started playing successfully
-                            console.log('Video autoplay started');
-                            video.style.display = 'block';
-                        }).catch(error => {
-                            // Autoplay was prevented
-                            console.log('Autoplay prevented, trying to enable on user interaction');
-                            
-                            // Try to play on first user interaction
-                            const enableAutoplay = () => {
-                                video.play().then(() => {
-                                    console.log('Video started after user interaction');
-                                    video.style.display = 'block';
-                                }).catch(e => {
-                                    console.log('Video play failed, using fallback background:', e);
-                                    video.style.display = 'none';
-                                });
+                    // Set video properties for better autoplay
+                    video.muted = true;
+                    video.playsInline = true;
+                    video.autoplay = true;
+                    video.loop = true;
+                    
+                    console.log('Attempting to force video play...');
+                    
+                    // Multiple attempts to play the video
+                    const attemptPlay = () => {
+                        const playPromise = video.play();
+                        
+                        if (playPromise !== undefined) {
+                            playPromise.then(() => {
+                                console.log('Video autoplay successful!');
+                            }).catch(error => {
+                                console.log('Autoplay blocked, will try on user interaction:', error);
                                 
-                                // Remove listeners after first interaction
-                                document.removeEventListener('touchstart', enableAutoplay);
-                                document.removeEventListener('click', enableAutoplay);
-                            };
-                            
-                            document.addEventListener('touchstart', enableAutoplay, { once: true });
-                            document.addEventListener('click', enableAutoplay, { once: true });
-                        });
-                    }
+                                // More aggressive user interaction listeners
+                                const forcePlay = () => {
+                                    video.play().then(() => {
+                                        console.log('Video started after user interaction');
+                                    }).catch(e => {
+                                        console.log('Video play still failed:', e);
+                                        // Try again after a short delay
+                                        setTimeout(() => video.play(), 100);
+                                    });
+                                };
+                                
+                                // Listen for multiple types of user interaction
+                                document.addEventListener('touchstart', forcePlay, { once: true });
+                                document.addEventListener('click', forcePlay, { once: true });
+                                document.addEventListener('scroll', forcePlay, { once: true });
+                                document.addEventListener('keydown', forcePlay, { once: true });
+                            });
+                        }
+                    };
+                    
+                    // Try immediately
+                    attemptPlay();
+                    
+                    // Try again after a short delay
+                    setTimeout(attemptPlay, 100);
+                    
+                    // Try once more after video metadata loads
+                    video.addEventListener('loadedmetadata', attemptPlay, { once: true });
                 }
             }
 
