@@ -487,8 +487,8 @@
             }
 
             .hero .container {
-                padding-left: 25px;
-                padding-right: 25px;
+                padding-left: 30px;
+                padding-right: 30px;
             }
 
             .hero-content {
@@ -499,38 +499,38 @@
             }
 
             .hero h1 {
-                font-size: 3.5rem;
+                font-size: 4rem;
                 letter-spacing: -1.5px;
                 line-height: 1.1;
-                margin-bottom: 30px;
+                margin-bottom: 35px;
             }
 
             .hero h2 {
-                font-size: 1.4rem;
-                margin-bottom: 30px;
+                font-size: 1.6rem;
+                margin-bottom: 35px;
                 line-height: 1.4;
             }
 
             .hero p {
-                font-size: 1.1rem;
-                margin-bottom: 40px;
+                font-size: 1.25rem;
+                margin-bottom: 45px;
                 line-height: 1.7;
             }
 
             .hero .cta-button {
-                padding: 16px 36px;
-                font-size: 0.9rem;
+                padding: 18px 40px;
+                font-size: 1rem;
                 letter-spacing: 1px;
             }
 
             .section-title {
-                font-size: 2.5rem;
-                margin-bottom: 40px;
+                font-size: 3rem;
+                margin-bottom: 50px;
             }
 
             .services .container {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 60px;
             }
 
             .services-left {
@@ -540,25 +540,33 @@
 
             .services-left .section-title {
                 text-align: center;
-                font-size: 2.5rem;
+                font-size: 3rem;
             }
 
             .services-intro {
-                font-size: 1.2rem;
-                margin-bottom: 30px;
+                font-size: 1.3rem;
+                margin-bottom: 40px;
             }
 
             .services-right {
                 padding-left: 0;
             }
 
+            .service-item {
+                padding: 35px 0;
+            }
+
             .service-item h3 {
-                font-size: 1.3rem;
+                font-size: 1.5rem;
+            }
+
+            .service-description p {
+                font-size: 1.1rem;
             }
 
             .transactions .container {
                 grid-template-columns: 1fr;
-                gap: 50px;
+                gap: 60px;
             }
 
             .contact-left {
@@ -567,8 +575,138 @@
             }
 
             .contact-left h2 {
-                font-size: 2.5rem;
+                font-size: 3rem;
                 line-height: 1.2;
+                margin-bottom: 30px;
+            }
+
+            .contact-left p {
+                font-size: 1.3rem;
+                margin-bottom: 40px;
+            }
+
+            .contact-left .cta-button {
+                padding: 18px 40px;
+                font-size: 1rem;
+            }
+
+            .contact-right {
+                padding-left: 0;
+            }
+
+            .calendly-inline-widget {
+                height: 650px !important;
+                min-width: 350px !important;
+            }
+
+            .about .section-title {
+                font-size: 3.5rem;
+            }
+
+            .about-content p {
+                font-size: 1.3rem;
+                margin-bottom: 35px;
+            }
+
+            .about .cta-button {
+                padding: 18px 40px;
+                font-size: 1rem;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                gap: 25px;
+            }
+
+            .footer-nav a {
+                font-size: 1.1rem;
+            }
+
+            .footer-contact p {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* Large Mobile Phones (iPhone 14 Pro Max, etc.) */
+        @media (max-width: 430px) {
+            .container {
+                padding: 0 25px;
+            }
+
+            .hero {
+                min-height: 95vh;
+                padding: 110px 0 55px;
+            }
+
+            .hero .container {
+                padding-left: 25px;
+                padding-right: 25px;
+            }
+
+            .hero h1 {
+                font-size: 3.2rem;
+                letter-spacing: -1px;
+                margin-bottom: 30px;
+            }
+
+            .hero h2 {
+                font-size: 1.4rem;
+                margin-bottom: 30px;
+            }
+
+            .hero p {
+                font-size: 1.15rem;
+                margin-bottom: 40px;
+            }
+
+            .hero .cta-button {
+                padding: 16px 35px;
+                font-size: 0.95rem;
+            }
+
+            .section-title {
+                font-size: 2.6rem;
+            }
+
+            .services, .about, .transactions {
+                padding: 75px 0;
+            }
+
+            .services-left .section-title {
+                font-size: 2.6rem;
+            }
+
+            .services-intro {
+                font-size: 1.2rem;
+            }
+
+            .service-item h3 {
+                font-size: 1.4rem;
+            }
+
+            .service-description p {
+                font-size: 1.05rem;
+            }
+
+            .about {
+                min-height: 75vh;
+            }
+
+            .about .section-title {
+                font-size: 3rem;
+            }
+
+            .about-content {
+                padding: 75px 0;
+            }
+
+            .about-content p {
+                font-size: 1.2rem;
+            }
+
+            .contact-left h2 {
+                font-size: 2.6rem;
+                line-height: 1.3;
                 margin-bottom: 25px;
             }
 
@@ -577,92 +715,61 @@
                 margin-bottom: 35px;
             }
 
-            .contact-right {
-                padding-left: 0;
+            .contact-left .cta-button {
+                padding: 16px 32px;
+                font-size: 0.95rem;
             }
 
             .calendly-inline-widget {
                 height: 600px !important;
-                min-width: 300px !important;
-            }
-
-            .about .section-title {
-                font-size: 3rem;
-            }
-
-            .about-content p {
-                font-size: 1.2rem;
-                margin-bottom: 30px;
-            }
-
-            .footer-nav {
-                flex-direction: column;
-                gap: 20px;
+                min-width: 320px !important;
             }
         }
 
-        @media (max-width: 480px) {
+        /* Standard Mobile Phones */
+        @media (max-width: 390px) {
             .container {
                 padding: 0 20px;
             }
 
-            .hero {
-                min-height: 90vh;
-                padding: 100px 0 50px;
-            }
-
-            .hero .container {
-                padding-left: 20px;
-                padding-right: 20px;
-            }
-
             .hero h1 {
                 font-size: 2.8rem;
-                letter-spacing: -1px;
                 margin-bottom: 25px;
             }
 
             .hero h2 {
-                font-size: 1.2rem;
+                font-size: 1.25rem;
                 margin-bottom: 25px;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.05rem;
                 margin-bottom: 35px;
             }
 
             .hero .cta-button {
-                padding: 14px 30px;
-                font-size: 0.85rem;
+                padding: 15px 30px;
+                font-size: 0.9rem;
             }
 
             .section-title {
-                font-size: 2.2rem;
-            }
-
-            .services, .about, .transactions {
-                padding: 70px 0;
+                font-size: 2.3rem;
             }
 
             .services-left .section-title {
-                font-size: 2.2rem;
+                font-size: 2.3rem;
             }
 
             .services-intro {
                 font-size: 1.1rem;
             }
 
-            .about {
-                min-height: 70vh;
+            .service-item h3 {
+                font-size: 1.3rem;
             }
 
             .about .section-title {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                padding: 70px 0;
+                font-size: 2.7rem;
             }
 
             .about-content p {
@@ -670,8 +777,7 @@
             }
 
             .contact-left h2 {
-                font-size: 2.2rem;
-                line-height: 1.3;
+                font-size: 2.3rem;
                 margin-bottom: 20px;
             }
 
@@ -680,52 +786,47 @@
                 margin-bottom: 30px;
             }
 
-            .contact-left .cta-button {
-                padding: 14px 28px;
-                font-size: 0.9rem;
-            }
-
             .calendly-inline-widget {
                 height: 550px !important;
-                min-width: 280px !important;
+                min-width: 300px !important;
             }
         }
 
-        /* Extra small screens */
+        /* Small Mobile Phones */
         @media (max-width: 360px) {
             .container {
-                padding: 0 15px;
+                padding: 0 18px;
             }
 
             .hero h1 {
-                font-size: 2.4rem;
+                font-size: 2.5rem;
                 line-height: 1.2;
             }
 
             .hero h2 {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
 
             .hero p {
-                font-size: 0.95rem;
+                font-size: 1rem;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
 
             .contact-left h2 {
-                font-size: 1.9rem;
+                font-size: 2.1rem;
                 line-height: 1.2;
             }
 
             .contact-left p {
-                font-size: 1rem;
+                font-size: 1.05rem;
             }
 
             .calendly-inline-widget {
-                height: 500px !important;
-                min-width: 260px !important;
+                height: 520px !important;
+                min-width: 280px !important;
             }
         }
 
