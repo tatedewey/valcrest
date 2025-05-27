@@ -735,22 +735,11 @@
             }
 
             .contact-right {
-                padding-left: 0;
-                width: 100%;
-                order: 2;
-                padding: 0 10px;
+                display: none !important;
             }
 
             .calendly-inline-widget {
-                height: 700px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: unset !important;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 8px 25px rgba(6, 36, 73, 0.15);
-                overflow: hidden;
-                background-color: white;
+                display: none !important;
             }
 
             .footer-nav {
@@ -822,22 +811,7 @@
             }
 
             .contact-right {
-                padding-left: 0 !important;
-                width: 100% !important;
-                order: 2 !important;
-                padding: 0 10px !important;
-            }
-
-            .calendly-inline-widget {
-                height: 600px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: unset !important;
-                margin: 0 auto !important;
-                border-radius: 8px !important;
-                box-shadow: 0 8px 25px rgba(6, 36, 73, 0.15) !important;
-                overflow: hidden !important;
-                background-color: white !important;
+                display: none !important;
             }
         }
 
@@ -961,16 +935,12 @@
                 margin-bottom: 35px;
             }
 
+            .contact-right {
+                display: none !important;
+            }
+
             .calendly-inline-widget {
-                height: 650px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: unset !important;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 8px 25px rgba(6, 36, 73, 0.15);
-                overflow: hidden;
-                background-color: white;
+                display: none !important;
             }
         }
 
@@ -1061,16 +1031,12 @@
                 margin-bottom: 30px;
             }
 
+            .contact-right {
+                display: none !important;
+            }
+
             .calendly-inline-widget {
-                height: 600px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: unset !important;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 8px 25px rgba(6, 36, 73, 0.15);
-                overflow: hidden;
-                background-color: white;
+                display: none !important;
             }
         }
 
@@ -1128,16 +1094,12 @@
                 margin-bottom: 25px;
             }
 
+            .contact-right {
+                display: none !important;
+            }
+
             .calendly-inline-widget {
-                height: 550px !important;
-                width: 100% !important;
-                max-width: 100% !important;
-                min-width: unset !important;
-                margin: 0 auto;
-                border-radius: 8px;
-                box-shadow: 0 8px 25px rgba(6, 36, 73, 0.15);
-                overflow: hidden;
-                background-color: white;
+                display: none !important;
             }
         }
 
@@ -1424,7 +1386,7 @@
             <div class="contact-left">
                 <h2>Connect with us.<br>We want to hear from you.</h2>
                 <p>Looking to raise capital, execute a transaction, or explore strategic options? We're ready to put our experience to work for you.</p>
-                <a href="mailto:contact@valcrestcapital.com" class="cta-button">Contact Us</a>
+                <a href="mailto:contact@valcrestcapital.com" class="cta-button contact-button">Contact Us</a>
             </div>
             <div class="contact-right">
                 <!-- Calendly inline widget begin -->
@@ -1511,6 +1473,22 @@
                     }
                 });
             }
+
+            // Mobile contact button functionality
+            function updateContactButton() {
+                const contactButton = document.querySelector('.contact-button');
+                if (contactButton && window.innerWidth <= 430) {
+                    contactButton.href = 'https://calendly.com/tate-valcrestcapital/30min';
+                    contactButton.textContent = 'Schedule Meeting';
+                } else if (contactButton) {
+                    contactButton.href = 'mailto:contact@valcrestcapital.com';
+                    contactButton.textContent = 'Contact Us';
+                }
+            }
+
+            // Update on load and resize
+            updateContactButton();
+            window.addEventListener('resize', updateContactButton);
         });
     </script>
 </body>
