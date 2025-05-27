@@ -120,6 +120,22 @@
             z-index: -2;
         }
 
+        .hero-video::-webkit-media-controls {
+            display: none !important;
+        }
+
+        .hero-video::-webkit-media-controls-start-playback-button {
+            display: none !important;
+        }
+
+        .hero-video::-webkit-media-controls-play-button {
+            display: none !important;
+        }
+
+        .hero-video::-webkit-media-controls-panel {
+            display: none !important;
+        }
+
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -1296,7 +1312,7 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <video class="hero-video" autoplay muted loop playsinline preload="auto">
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" webkit-playsinline="true">
             <source src="nycsky1.mp4" type="video/mp4">
             <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4" type="video/mp4">
             <!-- Fallback for browsers that don't support video -->
@@ -1489,6 +1505,47 @@
             // Update on load and resize
             updateContactButton();
             window.addEventListener('resize', updateContactButton);
+
+            // Force video autoplay on mobile
+            function forceVideoPlay() {
+                const video = document.querySelector('.hero-video');
+                if (video) {
+                    // Try to play the video
+                    const playPromise = video.play();
+                    
+                    if (playPromise !== undefined) {
+                        playPromise.then(() => {
+                            // Video started playing successfully
+                            console.log('Video autoplay started');
+                        }).catch(error => {
+                            // Autoplay was prevented
+                            console.log('Autoplay prevented, trying to enable on user interaction');
+                            
+                            // Try to play on first user interaction
+                            const enableAutoplay = () => {
+                                video.play().then(() => {
+                                    console.log('Video started after user interaction');
+                                }).catch(e => console.log('Video play failed:', e));
+                                
+                                // Remove listeners after first interaction
+                                document.removeEventListener('touchstart', enableAutoplay);
+                                document.removeEventListener('click', enableAutoplay);
+                            };
+                            
+                            document.addEventListener('touchstart', enableAutoplay, { once: true });
+                            document.addEventListener('click', enableAutoplay, { once: true });
+                        });
+                    }
+                }
+            }
+
+            // Force video play on load and when page becomes visible
+            forceVideoPlay();
+            document.addEventListener('visibilitychange', () => {
+                if (!document.hidden) {
+                    forceVideoPlay();
+                }
+            });
         });
     </script>
 </body>
