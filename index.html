@@ -11,7 +11,7 @@
     <title>Valcrest Capital - Boutique Investment Banking & Capital Advisory</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -26,31 +26,36 @@
         }
 
         :root {
-            --navy-blue: #062449;
-            --warm-gray: #AAB1B7;
-            --gold: #D4AF37;
-            --ivory: #F5F6F7;
-            --white: #FFFFFF;
+            --primary-color: #1a1a1a;
+            --secondary-color: #333333;
+            --accent-color: #007bff;
+            --text-color: #1a1a1a;
+            --text-light: #666666;
+            --background-color: #ffffff;
+            --background-light: #f8f9fa;
+            --border-color: #e9ecef;
+            --white: #ffffff;
         }
 
         body {
-            font-family: 'Work Sans', sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--navy-blue);
-            background-color: var(--white);
+            color: var(--text-color);
+            background-color: var(--background-color);
+            font-weight: 400;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
         /* Header */
         header {
             background-color: var(--white);
             padding: 20px 0;
-            box-shadow: 0 2px 10px rgba(6, 36, 73, 0.1);
+            border-bottom: 1px solid var(--border-color);
             position: fixed;
             width: 100%;
             top: 0;
@@ -65,1269 +70,394 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
             font-weight: 700;
-            color: var(--navy-blue);
+            color: var(--primary-color);
             text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 12px;
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 40px;
+            align-items: center;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--navy-blue);
+            color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s ease;
+            font-size: 16px;
         }
 
         .nav-links a:hover {
-            color: var(--gold);
+            color: var(--accent-color);
         }
 
         .contact-nav-btn {
-            border: 2px solid var(--navy-blue) !important;
-            padding: 8px 20px !important;
-            border-radius: 0 !important;
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 12px 24px !important;
+            border-radius: 6px !important;
             transition: all 0.3s ease !important;
         }
 
         .contact-nav-btn:hover {
-            background-color: var(--navy-blue) !important;
+            background-color: var(--secondary-color) !important;
             color: var(--white) !important;
         }
 
         /* Hero Section */
         .hero {
-            position: relative;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 140px 0 80px;
-            overflow: hidden;
-        }
-
-        .hero-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: -2;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                135deg,
-                rgba(6, 36, 73, 0.9) 0%,
-                rgba(6, 36, 73, 0.85) 50%,
-                rgba(6, 36, 73, 0.8) 100%
-            );
-            z-index: -1;
-        }
-
-        .hero .container {
-            display: flex;
-            align-items: center;
-            min-height: 60vh;
-            position: relative;
-            z-index: 1;
-            justify-content: flex-start;
-            padding-left: 60px;
-            padding-right: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .hero-content {
-            max-width: 650px;
-            text-align: left;
-            margin-left: 0;
-            padding-left: 0;
+            padding: 160px 0 100px;
+            background-color: var(--background-color);
+            text-align: center;
         }
 
         .hero h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 4.5rem;
+            font-size: 4rem;
             font-weight: 700;
-            color: var(--white);
+            color: var(--primary-color);
             margin-bottom: 24px;
-            letter-spacing: -2px;
-            line-height: 1.05;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-        }
-
-        .hero h2 {
-            font-family: 'Work Sans', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 500;
-            color: var(--white);
-            margin-bottom: 32px;
-            opacity: 0.95;
-            letter-spacing: 0.5px;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: var(--white);
-            margin-bottom: 48px;
-            line-height: 1.75;
-            opacity: 0.92;
-            font-weight: 400;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            max-width: 580px;
-        }
-
-        .hero .cta-button {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--white);
-            padding: 16px 40px;
-            text-decoration: none;
-            border-radius: 0;
-            font-weight: 600;
-            transition: all 0.4s ease;
-            border: 2px solid var(--white);
-            text-transform: uppercase;
-            letter-spacing: 1.2px;
-            font-size: 0.9rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: var(--white);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-
-        .hero .cta-button:hover::before {
-            left: 0;
-        }
-
-        .hero .cta-button:hover {
-            color: var(--navy-blue);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Services Section */
-        .services {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .services .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: start;
-        }
-
-        .services-left {
-            padding-right: 40px;
-        }
-
-        .services-left .section-title {
-            text-align: left;
-            margin-bottom: 30px;
-            font-size: 3rem;
-        }
-
-        .services-intro {
-            font-size: 1.1rem;
-            color: var(--warm-gray);
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        .services-left .cta-button {
-            background-color: transparent;
-            color: var(--navy-blue);
-            border: 2px solid var(--navy-blue);
-            border-radius: 0;
-            padding: 12px 30px;
-            font-weight: 500;
-            text-transform: none;
-            letter-spacing: normal;
-        }
-
-        .services-left .cta-button:hover {
-            background-color: var(--navy-blue);
-            color: var(--white);
-        }
-
-        .services-right {
-            padding-left: 40px;
-        }
-
-        .services-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .service-item {
-            padding: 30px 0;
-            border-bottom: 1px solid #e5e5e5;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .service-item:last-child {
-            border-bottom: none;
-        }
-
-        .service-item:hover {
-            background-color: rgba(6, 36, 73, 0.02);
-            padding-left: 10px;
-        }
-
-        .service-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .service-item h3 {
-            font-family: 'Work Sans', sans-serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--navy-blue);
-            margin: 0;
-        }
-
-        .service-arrow {
-            color: var(--navy-blue);
-            font-size: 1.2rem;
-            transition: transform 0.3s ease;
-        }
-
-        .service-item:hover .service-arrow {
-            transform: translateX(5px);
-        }
-
-        .service-item.active .service-arrow {
-            transform: rotate(90deg);
-        }
-
-        .service-description {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
-            padding: 0;
-        }
-
-        .service-description.expanded {
-            max-height: 200px;
-            padding: 20px 0 0 0;
-        }
-
-        .service-description p {
-            color: var(--warm-gray);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* General Section Title */
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 600;
-            color: var(--navy-blue);
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        /* Approach Section */
-        .approach {
-            padding: 80px 0;
-            background-color: var(--ivory);
-        }
-
-        .approach-content {
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .approach-content p {
-            font-size: 1.2rem;
-            color: var(--warm-gray);
-            line-height: 1.8;
-            margin-top: 30px;
-        }
-
-        /* Team Section */
-        .team {
-            padding: 80px 0;
-            background-color: var(--white);
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .team-member {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .team-member h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
-            color: var(--navy-blue);
-            margin-bottom: 10px;
-        }
-
-        .team-member .title {
-            color: var(--gold);
-            font-weight: 600;
-            margin-bottom: 15px;
-        }
-
-        .team-member p {
-            color: var(--warm-gray);
-            line-height: 1.7;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--navy-blue);
-            padding: 60px 0 20px;
-            text-align: center;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 30px;
-            flex-wrap: wrap;
-        }
-
-        .footer-nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .footer-nav a:hover {
-            color: var(--gold);
-        }
-
-        .footer-contact {
-            margin-bottom: 30px;
-        }
-
-        .footer-contact p {
-            color: var(--white);
-            margin-bottom: 10px;
-            font-size: 1rem;
-        }
-
-        .footer-contact a {
-            color: var(--white);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-contact a:hover {
-            color: var(--gold);
-        }
-
-        .footer-compliance {
-            margin-bottom: 30px;
+            line-height: 1.1;
             max-width: 800px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        .footer-compliance p {
-            color: var(--warm-gray);
-            font-size: 0.85rem;
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--text-light);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
             line-height: 1.6;
-            margin-bottom: 10px;
+        }
+
+        .hero .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .hero .cta-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background-color: var(--background-light);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            font-size: 1rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background-color: var(--background-color);
+        }
+
+        .section-title {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 80px;
+            line-height: 1.2;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .service-card {
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 16px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background-color: var(--background-light);
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 24px;
+        }
+
+        .about .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 32px;
+        }
+
+        .about .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background-color: var(--background-color);
+        }
+
+        .contact .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .contact-left h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .contact-left p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .contact-left .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .contact-left .cta-button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .calendly-inline-widget {
+            width: 100%;
+            height: 600px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            padding: 60px 0 20px;
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .footer-section a {
+            color: var(--white);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-compliance {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            margin-top: 40px;
+        }
+
+        .footer-compliance p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 16px;
         }
 
         .footer-copyright {
-            margin-bottom: 30px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .footer-copyright p {
-            color: var(--warm-gray);
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 20px;
         }
 
         /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--white);
-                box-shadow: 0 4px 10px rgba(6, 36, 73, 0.1);
-                flex-direction: column;
-                padding: 20px 0;
-                z-index: 1000;
-            }
-
-            .nav-links.mobile-menu-open {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0;
-                text-align: center;
-                padding: 10px 0;
-            }
-
-            .nav-links a {
-                font-size: 1.1rem;
-                padding: 15px 20px;
-                display: block;
-                border-bottom: 1px solid #f0f0f0;
-            }
-
-            .nav-links a:last-child {
-                border-bottom: none;
             }
 
             .mobile-menu-toggle {
                 display: flex !important;
-                position: relative;
-                z-index: 1001;
-            }
-
-            .mobile-menu-toggle.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .mobile-menu-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .mobile-menu-toggle.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            .container {
-                padding: 0 25px;
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-
-            .hero {
-                min-height: 100vh;
-                padding: 120px 0 60px;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .hero .container {
-                padding-left: 25px;
-                padding-right: 25px;
-                max-width: 100%;
-            }
-
-            .hero-content {
-                max-width: 100%;
-                margin-left: 0;
-                padding-left: 0;
-                text-align: left;
-                width: 100%;
-            }
-
-            .hero h1 {
-                font-size: 3.5rem;
-                letter-spacing: -1.5px;
-                line-height: 1.05;
-                margin-bottom: 30px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero h2 {
-                font-size: 1.5rem;
-                margin-bottom: 30px;
-                line-height: 1.3;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero p {
-                font-size: 1.2rem;
-                margin-bottom: 40px;
-                line-height: 1.6;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero .cta-button {
-                padding: 16px 35px;
-                font-size: 1rem;
-                letter-spacing: 1px;
-            }
-
-            .section-title {
-                font-size: 2.8rem;
-                margin-bottom: 40px;
-                line-height: 1.2;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .services {
-                padding: 80px 0;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .services .container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                max-width: 100%;
-            }
-
-            .services-left {
-                padding-right: 0;
-                text-align: center;
-                width: 100%;
-            }
-
-            .services-left .section-title {
-                text-align: center;
-                font-size: 2.8rem;
-                width: 100%;
-            }
-
-            .services-intro {
-                font-size: 1.25rem;
-                margin-bottom: 35px;
-                line-height: 1.6;
-                width: 100%;
-            }
-
-            .services-right {
-                padding-left: 0;
-                width: 100%;
-            }
-
-            .service-item {
-                padding: 30px 0;
-                border-bottom: 1px solid #e5e5e5;
-                width: 100%;
-            }
-
-            .service-item h3 {
-                font-size: 1.4rem;
-                line-height: 1.3;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .service-description p {
-                font-size: 1.1rem;
-                line-height: 1.6;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .about {
-                padding: 80px 0;
-                min-height: 80vh;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .about .section-title {
-                font-size: 3.2rem;
-                margin-bottom: 35px;
-                width: 100%;
-            }
-
-            .about-content {
-                padding: 80px 0;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .about-content p {
-                font-size: 1.25rem;
-                margin-bottom: 30px;
-                line-height: 1.6;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .about .cta-button {
-                padding: 16px 35px;
-                font-size: 1rem;
-            }
-
-            .transactions {
-                padding: 80px 0;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .transactions .container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-                max-width: 100%;
-                display: flex;
                 flex-direction: column;
+                cursor: pointer;
+                padding: 5px;
             }
 
-            .contact-left {
-                padding-right: 0;
-                text-align: center;
-                width: 100%;
-                order: 1;
-                margin-bottom: 40px;
-            }
-
-            .contact-left h2 {
-                font-size: 2rem !important;
-                line-height: 1.3 !important;
-                margin-bottom: 20px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left p {
-                font-size: 1.05rem !important;
-                margin-bottom: 25px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left .cta-button {
-                padding: 14px 28px !important;
-                font-size: 0.9rem !important;
-                margin-bottom: 35px;
-            }
-
-            .contact-right {
-                display: block !important;
-                padding-left: 0 !important;
-                width: 100% !important;
-                order: 2 !important;
-                margin-top: 20px !important;
-            }
-
-            .calendly-inline-widget {
-                display: block !important;
-                min-width: 100% !important;
-                width: 100% !important;
-                height: 450px !important;
-                border-radius: 8px !important;
-                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
-            }
-
-            .footer-nav {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .footer-nav a {
-                font-size: 1.1rem;
-            }
-
-            .footer-contact p {
-                font-size: 1.1rem;
-            }
-
-            .footer-compliance p {
-                font-size: 0.9rem;
-                line-height: 1.5;
-                width: 100%;
-                word-wrap: break-word;
-            }
-        }
-
-        /* iPhone 14 Pro Max Specific Fix */
-        @media only screen and (max-width: 430px) {
-            .contact-left h2 {
-                font-size: 1.6rem !important;
-                line-height: 1.3 !important;
-                margin-bottom: 18px !important;
-                font-family: 'Playfair Display', serif !important;
-                font-weight: 600 !important;
-                color: var(--navy-blue) !important;
-                width: 100% !important;
-                word-wrap: break-word !important;
-            }
-
-            .contact-left p {
-                font-size: 0.95rem !important;
-                margin-bottom: 22px !important;
-                color: var(--warm-gray) !important;
-                line-height: 1.6 !important;
-                width: 100% !important;
-                word-wrap: break-word !important;
-            }
-
-            .contact-left .cta-button {
-                padding: 12px 26px !important;
-                font-size: 0.8rem !important;
-                margin-bottom: 30px !important;
-                background-color: var(--navy-blue) !important;
-                color: var(--white) !important;
-                border: 2px solid var(--navy-blue) !important;
-                font-weight: 600 !important;
-            }
-
-            .transactions .container {
-                display: flex !important;
-                flex-direction: column !important;
-                gap: 40px !important;
-                align-items: stretch !important;
-            }
-
-            .contact-left {
-                padding-right: 0 !important;
-                text-align: center !important;
-                width: 100% !important;
-                order: 1 !important;
-                margin-bottom: 30px !important;
-            }
-
-            .contact-right {
-                display: block !important;
-                padding-left: 0 !important;
-                width: 100% !important;
-                order: 2 !important;
-                margin-top: 20px !important;
-            }
-
-            .calendly-inline-widget {
-                display: block !important;
-                min-width: 100% !important;
-                width: 100% !important;
-                height: 450px !important;
-                border-radius: 8px !important;
-                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
-            }
-        }
-
-        /* Large Mobile Phones (iPhone 14 Pro Max, etc.) */
-        @media (max-width: 430px) {
-            .container {
-                padding: 0 20px;
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-
-            .hero {
-                min-height: 90vh;
-                padding: 100px 0 50px;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .hero .container {
-                padding-left: 20px;
-                padding-right: 20px;
-                max-width: 100%;
+            .mobile-menu-toggle span {
+                width: 25px;
+                height: 3px;
+                background-color: var(--primary-color);
+                margin: 3px 0;
+                transition: 0.3s;
             }
 
             .hero h1 {
-                font-size: 3rem;
-                letter-spacing: -1px;
-                margin-bottom: 25px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero h2 {
-                font-size: 1.3rem;
-                margin-bottom: 25px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-                margin-bottom: 35px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero .cta-button {
-                padding: 15px 30px;
-                font-size: 0.95rem;
-            }
-
-            .section-title {
-                font-size: 2.4rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .services, .about, .transactions {
-                padding: 70px 0;
-                width: 100%;
-                overflow-x: hidden;
-            }
-
-            .services-left .section-title {
-                font-size: 2.4rem;
-                width: 100%;
-            }
-
-            .services-intro {
-                font-size: 1.15rem;
-                width: 100%;
-            }
-
-            .service-item h3 {
-                font-size: 1.3rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .service-description p {
-                font-size: 1.05rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .about .section-title {
-                font-size: 2.8rem;
-                width: 100%;
-            }
-
-            .about-content {
-                padding: 70px 0;
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .about-content p {
-                font-size: 1.15rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left h2 {
-                font-size: 2rem !important;
-                line-height: 1.3 !important;
-                margin-bottom: 20px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left p {
-                font-size: 1.05rem !important;
-                margin-bottom: 25px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left .cta-button {
-                padding: 14px 28px !important;
-                font-size: 0.9rem !important;
-                margin-bottom: 35px;
-            }
-
-            .contact-right {
-                display: block !important;
-                padding-left: 0 !important;
-                width: 100% !important;
-                order: 2 !important;
-                margin-top: 20px !important;
-            }
-
-            .calendly-inline-widget {
-                display: block !important;
-                min-width: 100% !important;
-                width: 100% !important;
-                height: 400px !important;
-                border-radius: 8px !important;
-                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
-            }
-        }
-
-        /* Standard Mobile Phones */
-        @media (max-width: 390px) {
-            .container {
-                padding: 0 18px;
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-
-            .hero h1 {
-                font-size: 2.6rem;
-                margin-bottom: 20px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero h2 {
-                font-size: 1.2rem;
-                margin-bottom: 20px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero p {
-                font-size: 1.05rem;
-                margin-bottom: 30px;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .hero .cta-button {
-                padding: 14px 28px;
-                font-size: 0.9rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .services-left .section-title {
-                font-size: 2.2rem;
-                width: 100%;
-            }
-
-            .services-intro {
-                font-size: 1.1rem;
-                width: 100%;
-            }
-
-            .service-item h3 {
-                font-size: 1.25rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .about .section-title {
                 font-size: 2.5rem;
-                width: 100%;
-            }
-
-            .about-content p {
-                font-size: 1.1rem;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left h2 {
-                font-size: 1.6rem !important;
-                margin-bottom: 18px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left p {
-                font-size: 0.95rem !important;
-                margin-bottom: 22px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left .cta-button {
-                padding: 12px 26px !important;
-                font-size: 0.8rem !important;
-                margin-bottom: 30px;
-            }
-
-            .contact-right {
-                display: block !important;
-                padding-left: 0 !important;
-                width: 100% !important;
-                order: 2 !important;
-                margin-top: 20px !important;
-            }
-
-            .calendly-inline-widget {
-                display: block !important;
-                min-width: 100% !important;
-                width: 100% !important;
-                height: 400px !important;
-                border-radius: 8px !important;
-                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
-            }
-        }
-
-        /* Small Mobile Phones */
-        @media (max-width: 360px) {
-            .container {
-                padding: 0 15px;
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-
-            .hero h1 {
-                font-size: 2.3rem;
-                line-height: 1.1;
-                width: 100%;
-                word-wrap: break-word;
             }
 
             .hero h2 {
-                font-size: 1.1rem;
-                width: 100%;
-                word-wrap: break-word;
+                font-size: 1.2rem;
             }
 
-            .hero p {
-                font-size: 1rem;
-                width: 100%;
-                word-wrap: break-word;
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .contact .container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .contact-left h2 {
+                font-size: 2.5rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
             }
 
             .section-title {
                 font-size: 2rem;
-                width: 100%;
-                word-wrap: break-word;
             }
 
             .contact-left h2 {
-                font-size: 1.5rem !important;
-                line-height: 1.2 !important;
-                margin-bottom: 16px !important;
-                width: 100%;
-                word-wrap: break-word;
+                font-size: 2rem;
             }
 
-            .contact-left p {
-                font-size: 0.9rem !important;
-                margin-bottom: 20px !important;
-                width: 100%;
-                word-wrap: break-word;
-            }
-
-            .contact-left .cta-button {
-                padding: 12px 24px !important;
-                font-size: 0.75rem !important;
-                margin-bottom: 25px;
-            }
-
-            .contact-right {
-                display: block !important;
-                padding-left: 0 !important;
-                width: 100% !important;
-                order: 2 !important;
-                margin-top: 15px !important;
-            }
-
-            .calendly-inline-widget {
-                display: block !important;
-                min-width: 100% !important;
-                width: 100% !important;
-                height: 350px !important;
-                border-radius: 6px !important;
-                box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
-            }
-        }
-
-        /* Reduce motion for users who prefer it */
-        @media (prefers-reduced-motion: reduce) {
-            .hero .cta-button {
-                transition: none;
-            }
-            
-            .hero .cta-button:hover {
-                transform: none;
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
         }
 
         /* General CTA Button */
         .cta-button {
             display: inline-block;
-            background-color: var(--navy-blue);
+            background-color: var(--primary-color);
             color: var(--white);
-            padding: 15px 35px;
+            padding: 16px 32px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 2px solid var(--navy-blue);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
 
         .cta-button:hover {
-            background-color: var(--white);
-            color: var(--navy-blue);
-        }
-
-        /* About Section */
-        .about {
-            padding: 0;
-            background-color: var(--white);
-            position: relative;
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-        }
-
-        .about-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-        }
-
-        .about-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                rgba(6, 36, 73, 0.85) 0%,
-                rgba(6, 36, 73, 0.75) 50%,
-                rgba(6, 36, 73, 0.3) 100%
-            );
-            z-index: 2;
-        }
-
-        .about-content {
-            position: relative;
-            z-index: 3;
-            max-width: 600px;
-            margin: 0;
-            text-align: left;
-            padding: 60px 0;
-            color: var(--white);
-        }
-
-        .about .section-title {
-            color: var(--white);
-            text-align: left;
-            margin-bottom: 40px;
-            font-size: 3.5rem;
-            font-weight: 700;
-        }
-
-        .about-content p {
-            font-size: 1.1rem;
-            color: var(--white);
-            line-height: 1.7;
-            margin-bottom: 25px;
-            opacity: 0.95;
-        }
-
-        .about .cta-button {
-            background-color: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            padding: 12px 30px;
-            margin-top: 20px;
-            font-weight: 500;
-            text-transform: none;
-            letter-spacing: normal;
-            transition: all 0.3s ease;
-        }
-
-        .about .cta-button:hover {
-            background-color: var(--white);
-            color: var(--navy-blue);
-        }
-
-        /* Transactions Section - Now Contact Section */
-        .transactions {
-            padding: 80px 0;
-            background-color: var(--ivory);
-        }
-
-        .transactions .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .contact-left {
-            padding-right: 40px;
-        }
-
-        .contact-left h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3rem;
-            font-weight: 600;
-            color: var(--navy-blue);
-            margin-bottom: 30px;
-            line-height: 1.2;
-        }
-
-        .contact-left p {
-            font-size: 1.2rem;
-            color: var(--warm-gray);
-            line-height: 1.7;
-            margin-bottom: 40px;
-        }
-
-        .contact-left .cta-button {
-            background-color: var(--navy-blue);
-            color: var(--white);
-            border: 2px solid var(--navy-blue);
-            padding: 15px 35px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .contact-left .cta-button:hover {
-            background-color: var(--white);
-            color: var(--navy-blue);
-        }
-
-        .contact-right {
-            display: block !important;
-            padding-left: 0 !important;
-            width: 100% !important;
-            order: 2 !important;
-            margin-top: 20px !important;
-        }
-
-        .calendly-inline-widget {
-            display: block !important;
-            min-width: 100% !important;
-            width: 100% !important;
-            height: 450px !important;
-            border-radius: 8px !important;
-            box-shadow: 0 4px 15px rgba(6, 36, 73, 0.1) !important;
+            background-color: var(--secondary-color);
         }
     </style>
 </head>
@@ -1335,32 +465,51 @@
     <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo" style="display: flex; align-items: center; gap: 12px;">
-                <img src="Logo2.png" alt="Valcrest Capital Logo" style="height: 48px; width: auto; display: block;" />
+            <a href="#" class="logo">
+                <img src="Logo2.png" alt="Valcrest Capital Logo" style="height: 40px; width: auto;" />
             </a>
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Capabilities</a></li>
-                <li><a href="#contact" class="contact-nav-btn">Contact</a></li>
+                <li><a href="#contact" class="contact-nav-btn">Book a Call</a></li>
             </ul>
-            <div class="mobile-menu-toggle" style="display: none; flex-direction: column; cursor: pointer; padding: 5px;">
-                <span style="width: 25px; height: 3px; background-color: var(--navy-blue); margin: 3px 0; transition: 0.3s;"></span>
-                <span style="width: 25px; height: 3px; background-color: var(--navy-blue); margin: 3px 0; transition: 0.3s;"></span>
-                <span style="width: 25px; height: 3px; background-color: var(--navy-blue); margin: 3px 0; transition: 0.3s;"></span>
+            <div class="mobile-menu-toggle" style="display: none;">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background"></div>
-        <div class="hero-overlay"></div>
         <div class="container">
-            <div class="hero-content">
-                <h1>Valcrest Capital</h1>
-                <h2>Where Capital Markets Expertise Meets Modern Execution</h2>
-                <p>Built on decades of capital markets experience, combining institutional-grade rigor with boutique agility to empower businesses through strategic capital solutions that create lasting value and deliver efficient outcomes.</p>
-                <a href="#about" class="cta-button">Learn More</a>
+            <h1>Boutique Investment Banking & Capital Advisory</h1>
+            <h2>Where Capital Markets Expertise Meets Modern Execution</h2>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>$0B+</h3>
+                    <p>In Aggregate Transaction Volume</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0+</h3>
+                    <p>Countries Global Reach</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0+</h3>
+                    <p>Investor Relations</p>
+                </div>
+                <div class="stat-item">
+                    <h3>0+</h3>
+                    <p>Transactions</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1368,49 +517,23 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="services-left">
-                <h2 class="section-title">Capabilities</h2>
-                <p class="services-intro">We structure transactions, source the right capital, and execute with precision.</p>
-                <a href="#contact" class="cta-button">Learn More</a>
-            </div>
-            <div class="services-right">
-                <div class="services-list">
-                    <div class="service-item">
-                        <div class="service-header">
-                            <h3>Capital Markets Advisory</h3>
-                            <span class="service-arrow">&#8594;</span>
-                        </div>
-                        <div class="service-description">
-                            <p>Our Capital Markets Advisory practice helps companies raise capital efficiently, optimize their capital structures, and position themselves for long-term success. We provide strategic guidance and hands-on execution across equity, debt, and hybrid capital solutions, with extensive experience in challenging situations and complex credits.</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-header">
-                            <h3>M&A Strategic Advisory</h3>
-                            <span class="service-arrow">&#8594;</span>
-                        </div>
-                        <div class="service-description">
-                            <p>Our M&A practice helps companies navigate strategic transactions efficiently, optimize deal structures, and position themselves for successful outcomes. We provide strategic guidance and hands-on execution across exits, acquisitions, and recapitalizations, with extensive experience in complex situations and challenging transactions.</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-header">
-                            <h3>Strategic Advisory</h3>
-                            <span class="service-arrow">&#8594;</span>
-                        </div>
-                        <div class="service-description">
-                            <p>Our Strategic Advisory practice helps companies navigate critical business decisions efficiently, optimize strategic positioning, and position themselves for sustainable growth. We provide strategic guidance and hands-on execution across corporate strategy, valuations, and fairness opinions, with extensive experience in complex situations and transformational initiatives.</p>
-                        </div>
-                    </div>
-                    <div class="service-item">
-                        <div class="service-header">
-                            <h3>Financial Restructuring</h3>
-                            <span class="service-arrow">&#8594;</span>
-                        </div>
-                        <div class="service-description">
-                            <p>Our Financial Restructuring practice helps companies optimize capital structures efficiently, resolve financial challenges, and position themselves for operational recovery. We provide strategic guidance and hands-on execution across debt restructuring, balance sheet optimization, and liability management, with extensive experience in distressed situations and complex financial workouts.</p>
-                        </div>
-                    </div>
+            <h2 class="section-title">Principal Focus Areas</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Capital Markets Advisory</h3>
+                    <p>Our Capital Markets Advisory practice helps companies raise capital efficiently, optimize their capital structures, and position themselves for long-term success. We provide strategic guidance and hands-on execution across equity, debt, and hybrid capital solutions, with extensive experience in challenging situations and complex credits.</p>
+                </div>
+                <div class="service-card">
+                    <h3>M&A Strategic Advisory</h3>
+                    <p>Our M&A practice helps companies navigate strategic transactions efficiently, optimize deal structures, and position themselves for successful outcomes. We provide strategic guidance and hands-on execution across exits, acquisitions, and recapitalizations, with extensive experience in complex situations and challenging transactions.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Strategic Advisory</h3>
+                    <p>Our Strategic Advisory practice helps companies navigate critical business decisions efficiently, optimize strategic positioning, and position themselves for sustainable growth. We provide strategic guidance and hands-on execution across corporate strategy, valuations, and fairness opinions, with extensive experience in complex situations and transformational initiatives.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Financial Restructuring</h3>
+                    <p>Our Financial Restructuring practice helps companies optimize capital structures efficiently, resolve financial challenges, and position themselves for operational recovery. We provide strategic guidance and hands-on execution across debt restructuring, balance sheet optimization, and liability management, with extensive experience in distressed situations and complex financial workouts.</p>
                 </div>
             </div>
         </div>
@@ -1418,31 +541,29 @@
 
     <!-- About Section -->
     <section class="about" id="about">
-        <div class="about-background"></div>
-        <div class="about-overlay"></div>
         <div class="container">
             <div class="about-content">
-                <h2 class="section-title">About Us</h2>
+                <h2 class="section-title">About Valcrest Capital</h2>
                 <p>Valcrest is a boutique investment bank that combines institutional-grade rigor with boutique agility to empower businesses through strategic capital solutions that create lasting value.</p>
                 <p>Our team has decades of deep relationships across capital markets, from institutional investors to family offices and strategic partners. Entrepreneurs first, bankers second - bringing a practical, ownership-minded approach because that's how deals get done.</p>
                 <p>Clients benefit from deep market expertise and sophisticated execution with unwavering focus on speed, precision, and efficiency. Partnering with visionary entrepreneurs, growth companies, and financial sponsors determined to reach their peak potential.</p>
                 <p>This is investment banking reimagined, where decades of market wisdom meet the innovation and speed that today's opportunities demand.</p>
-                <a href="#contact" class="cta-button">Learn More</a>
+                <a href="#contact" class="cta-button">Book a Call</a>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section class="transactions" id="contact">
+    <section class="contact" id="contact">
         <div class="container">
             <div class="contact-left">
                 <h2>Connect with us.<br>We want to hear from you.</h2>
                 <p>Looking to raise capital, execute a transaction, or explore strategic options? We're ready to put our experience to work for you.</p>
-                <a href="mailto:contact@valcrestcapital.com" class="cta-button contact-button">Contact Us</a>
+                <a href="mailto:contact@valcrestcapital.com" class="cta-button">Contact Us</a>
             </div>
             <div class="contact-right">
                 <!-- Calendly inline widget begin -->
-                <div class="calendly-inline-widget" data-url="https://calendly.com/tate-valcrestcapital/30min?v=20250103" style="min-width:320px;height:700px;"></div>
+                <div class="calendly-inline-widget" data-url="https://calendly.com/tate-valcrestcapital/30min?v=20250103"></div>
                 <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 <!-- Calendly inline widget end -->
             </div>
@@ -1452,19 +573,22 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-nav">
-                <a href="#about">About Us</a>
-                <a href="#services">Capabilities</a>
-                <a href="#contact">Contact</a>
-                <a href="#privacy">Privacy Policy</a>
-            </div>
-            <div class="footer-contact">
-                <p>contact@valcrestcapital.com</p>
-                <a href="https://linkedin.com/company/valcrestcapital" target="_blank">LinkedIn</a>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Navigation</h3>
+                    <a href="#about">About Us</a>
+                    <a href="#services">Capabilities</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <a href="mailto:contact@valcrestcapital.com">contact@valcrestcapital.com</a>
+                    <a href="https://linkedin.com/company/valcrestcapital" target="_blank">LinkedIn</a>
+                </div>
             </div>
             <div class="footer-compliance">
                 <p>Securities are offered through Finalis Securities LLC Member FINRA / SIPC. Valcrest Capital is not a registered broker-dealer, and Finalis Securities LLC and Valcrest Capital are separate, unaffiliated entities.</p>
-                <p><a href="#" target="_blank" style="color: var(--warm-gray);">Finalis Privacy Policy</a> | <a href="#" target="_blank" style="color: var(--warm-gray);">Finalis Business Continuity Plan</a> | <a href="https://brokercheck.finra.org" target="_blank" style="color: var(--warm-gray);">FINRA BrokerCheck</a></p>
+                <p><a href="#" target="_blank">Finalis Privacy Policy</a> | <a href="#" target="_blank">Finalis Business Continuity Plan</a> | <a href="https://brokercheck.finra.org" target="_blank">FINRA BrokerCheck</a></p>
                 <p>www.valcrestcapital.com (the "Valcrest Capital Website") is a website operated by Valcrest Capital, a privately held Wyoming limited liability company. Valcrest Capital provides financial and strategic consulting services, mergers and acquisitions services, fairness opinions, etc.</p>
                 <p><strong>Disclaimer:</strong> This website is for informational purposes only, is not an offer, solicitation, recommendation, or commitment for any transaction or to buy or sell any security or other financial product, and is not intended as investment advice or as a confirmation of any transaction. Products and services on this website may not be available for residents of certain jurisdictions. Please consult with a Finalis Securities' registered representative regarding the product or service in question for further information. Investments involve risk and are not guaranteed to appreciate. Any market price, indicative value, estimate, view, opinion, data, or other information herein is not warranted as to completeness or accuracy, is subject to change without notice, and Valcrest Capital along with Finalis Securities LLC accepts no liability for its use or to update it or keep it current.</p>
             </div>
@@ -1476,27 +600,6 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const serviceItems = document.querySelectorAll('.service-item');
-            
-            serviceItems.forEach(item => {
-                const header = item.querySelector('.service-header');
-                const description = item.querySelector('.service-description');
-                
-                header.addEventListener('click', function() {
-                    // Close all other items
-                    serviceItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            otherItem.classList.remove('active');
-                            otherItem.querySelector('.service-description').classList.remove('expanded');
-                        }
-                    });
-                    
-                    // Toggle current item
-                    item.classList.toggle('active');
-                    description.classList.toggle('expanded');
-                });
-            });
-
             // Mobile menu functionality
             const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
             const navLinks = document.querySelector('.nav-links');
@@ -1515,31 +618,18 @@
                         mobileMenuToggle.classList.remove('active');
                     });
                 });
-
-                // Close menu when clicking outside
-                document.addEventListener('click', function(event) {
-                    if (!mobileMenuToggle.contains(event.target) && !navLinks.contains(event.target)) {
-                        navLinks.classList.remove('mobile-menu-open');
-                        mobileMenuToggle.classList.remove('active');
-                    }
-                });
             }
 
             // Mobile contact button functionality
             function updateContactButton() {
                 const contactButton = document.querySelector('.contact-button');
-                console.log('Updating contact button, screen width:', window.innerWidth);
                 if (contactButton) {
-                    // Always keep the email functionality, but add a note for mobile users
-                    contactButton.href = 'mailto:contact@valcrestcapital.com';
                     if (window.innerWidth <= 768) {
                         contactButton.href = 'https://calendly.com/tate-valcrestcapital/30min';
                         contactButton.textContent = 'Book a Meeting';
-                        console.log('Set mobile button: Book a Meeting');
                     } else {
                         contactButton.href = 'mailto:contact@valcrestcapital.com';
                         contactButton.textContent = 'Contact Us';
-                        console.log('Set desktop button: Contact Us');
                     }
                 }
             }
