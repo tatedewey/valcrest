@@ -477,6 +477,76 @@
             opacity: 1;
             transform: translateY(0);
         }
+        @media (max-width: 900px) {
+            .about {
+                flex-direction: column;
+                min-height: unset;
+            }
+            .about > div:first-child {
+                padding: 48px 20px 24px 20px !important;
+                max-width: 100vw;
+            }
+            .about > div:last-child {
+                min-height: 220px !important;
+                height: 220px !important;
+            }
+            .about img {
+                min-height: 220px !important;
+                height: 220px !important;
+                object-fit: cover;
+            }
+        }
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px 0 60px !important;
+                min-height: 350px !important;
+            }
+            .hero h1 {
+                font-size: 2.2rem !important;
+            }
+            .hero h2 {
+                font-size: 1.1rem !important;
+            }
+            .team-grid {
+                grid-template-columns: 1fr !important;
+                gap: 28px !important;
+            }
+            .team-member-card img {
+                max-width: 140px !important;
+                height: auto !important;
+            }
+        }
+        @media (max-width: 480px) {
+            .about > div:first-child {
+                padding: 32px 8px 16px 8px !important;
+            }
+            .about .section-title {
+                font-size: 2rem !important;
+            }
+        }
+        /* Hero fallback image for mobile and no video support */
+        .hero {
+            background: url('images/nyc photo 2.jpg') center/cover no-repeat;
+        }
+        .hero video {
+            display: block;
+        }
+        @media (max-width: 900px) {
+            .hero video {
+                display: none !important;
+            }
+        }
+        /* Team images: ensure lowercase and proper scaling */
+        .team-member-card img {
+            width: 100%;
+            max-width: 200px;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 6px;
+            margin-bottom: 18px;
+            background: #f0f0f0;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -614,35 +684,35 @@
             <div class="team-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:40px; justify-items:center;">
                 <div class="team-member-card" data-name="Tate Dewey" data-bio="Tate Dewey is Managing Partner at Valcrest Capital. With a background in demand generation across fintech and health tech, he’s driven $100M+ in attributable revenue for startups and public companies, including ventures acquired by industry leaders. He brings growth insight to strategic capital advisory." data-img="images/tate.jpg">
                     <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/tate.jpg" alt="Tate Dewey" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <img src="images/tate.jpg" alt="Tate Dewey" />
                         <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Tate Dewey</div>
                         <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
                     </div>
                 </div>
                 <div class="team-member-card" data-name="Brian Callanan" data-bio="Brian Callanan is CEO of Callanan Financial Advocates with 11+ years in estate planning, structured settlements, and premium financing. A former advisor at Raymond James, UBS, and MetLife, he brings deep expertise in succession planning, secondary market annuities, and real estate finance for high-net-worth individuals and business owners. Learn more about Brian Callanan <a href='https://thechiefexitofficer.com/home-page' target='_blank' style='color:#062449; text-decoration:underline;'>here</a>." data-img="images/brian.jpg">
                     <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/brian.jpg" alt="Brian Callanan" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <img src="images/brian.jpg" alt="Brian Callanan" />
                         <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Brian Callanan</div>
                         <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
                     </div>
                 </div>
                 <div class="team-member-card" data-name="Rudy Balseiro" data-bio="Rudy is a Managing Director at Kingswood U.S. with over 30 years of experience in Equity Capital Markets. Formerly Head of ECM at SMBC Nikko, Nomura, and Needham & Co., he has led origination and syndicate execution across 500+ equity transactions totaling $97B+, with deep sector expertise in healthcare and technology." data-img="images/rudy.jpg">
                     <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/rudy.jpg" alt="Rudy Balseiro" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <img src="images/rudy.jpg" alt="Rudy Balseiro" />
                         <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Rudy Balseiro</div>
                         <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
                     </div>
                 </div>
                 <div class="team-member-card" data-name="Shawn Flynn" data-bio="Shawn Flynn is the Managing Director at SVH Capital, specializing in middle-market M&A and growth capital transactions in Silicon Valley. A hands-on advisor and founder of The Silicon Valley Podcast, he brings deep tech sector insight, guiding clients through $10M–$300M deals from origination to close with clarity and precision. Learn more about Shawn <a href='https://svhcapital.com/' target='_blank' style='color:#062449; text-decoration:underline;'>here</a>." data-img="images/shawn.png">
                     <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/shawn.png" alt="Shawn Flynn" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <img src="images/shawn.png" alt="Shawn Flynn" />
                         <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Shawn Flynn</div>
                         <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
                     </div>
                 </div>
                 <div class="team-member-card" data-name="Samuel" data-bio="Experienced Business Development Director with 5+ years in deal and demand origination. He has helped companies secure strategic partnerships from SMBs to public firms and developed Valcrest’s deal origination strategy." data-img="images/sam.jpg">
                     <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/sam.jpg" alt="Samuel" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <img src="images/sam.jpg" alt="Samuel" />
                         <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Samuel</div>
                         <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
                     </div>
