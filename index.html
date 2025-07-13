@@ -26,13 +26,13 @@
         }
 
         :root {
-            --primary-color: #1a1a1a;
-            --secondary-color: #333333;
-            --accent-color: #007bff;
-            --text-color: #1a1a1a;
-            --text-light: #666666;
+            --primary-color: #062449;
+            --secondary-color: #062449;
+            --accent-color: #062449;
+            --text-color: #062449;
+            --text-light: #062449;
             --background-color: #ffffff;
-            --background-light: #f8f9fa;
+            --background-light: #ffffff;
             --border-color: #e9ecef;
             --white: #ffffff;
         }
@@ -89,7 +89,7 @@
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-color);
+            color: var(--primary-color);
             font-weight: 500;
             transition: color 0.3s ease;
             font-size: 16px;
@@ -108,14 +108,14 @@
         }
 
         .contact-nav-btn:hover {
-            background-color: var(--secondary-color) !important;
-            color: var(--white) !important;
+            background-color: var(--white) !important;
+            color: var(--primary-color) !important;
+            border: 2px solid var(--primary-color) !important;
         }
 
         /* Hero Section */
         .hero {
             padding: 160px 0 100px;
-            background-color: var(--background-color);
             text-align: center;
         }
 
@@ -133,7 +133,7 @@
         .hero h2 {
             font-size: 1.5rem;
             font-weight: 400;
-            color: var(--text-light);
+            color: var(--primary-color);
             margin-bottom: 48px;
             max-width: 600px;
             margin-left: auto;
@@ -151,11 +151,12 @@
             font-weight: 600;
             transition: all 0.3s ease;
             font-size: 16px;
+            border: 2px solid var(--primary-color);
         }
 
         .hero .cta-button:hover {
-            background-color: var(--secondary-color);
-            transform: translateY(-2px);
+            background-color: var(--white);
+            color: var(--primary-color);
         }
 
         /* Stats Section */
@@ -180,7 +181,7 @@
 
         .stat-item p {
             font-size: 1rem;
-            color: var(--text-light);
+            color: var(--primary-color);
             font-weight: 500;
         }
 
@@ -209,13 +210,13 @@
             background-color: var(--white);
             padding: 40px;
             border-radius: 12px;
-            border: 1px solid var(--border-color);
+            border: 1px solid var(--primary-color);
             transition: all 0.3s ease;
         }
 
         .service-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 40px rgba(6,36,73,0.08);
         }
 
         .service-card h3 {
@@ -226,15 +227,19 @@
         }
 
         .service-card p {
-            color: var(--text-light);
+            color: var(--primary-color);
             line-height: 1.7;
             font-size: 1rem;
         }
 
         /* About Section */
         .about {
-            padding: 100px 0;
+            padding: 0;
             background-color: var(--background-light);
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
         }
 
         .about-content {
@@ -245,7 +250,7 @@
 
         .about-content p {
             font-size: 1.2rem;
-            color: var(--text-light);
+            color: var(--primary-color);
             line-height: 1.8;
             margin-bottom: 24px;
         }
@@ -263,7 +268,8 @@
         }
 
         .about .cta-button:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--white);
+            color: var(--primary-color);
         }
 
         /* Contact Section */
@@ -289,7 +295,7 @@
 
         .contact-left p {
             font-size: 1.2rem;
-            color: var(--text-light);
+            color: var(--primary-color);
             line-height: 1.7;
             margin-bottom: 32px;
         }
@@ -306,7 +312,8 @@
         }
 
         .contact-left .cta-button:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--white);
+            color: var(--primary-color);
         }
 
         .calendly-inline-widget {
@@ -345,7 +352,7 @@
         }
 
         .footer-section a:hover {
-            color: var(--accent-color);
+            color: var(--background-color);
         }
 
         .footer-compliance {
@@ -457,7 +464,18 @@
         }
 
         .cta-button:hover {
-            background-color: var(--secondary-color);
+            background-color: var(--white);
+            color: var(--primary-color);
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(.4,0,.2,1), transform 0.7s cubic-bezier(.4,0,.2,1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -471,6 +489,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#services">Capabilities</a></li>
+                <li><a href="#team">Our Team</a></li>
                 <li><a href="#contact" class="contact-nav-btn">Book a Call</a></li>
             </ul>
             <div class="mobile-menu-toggle" style="display: none;">
@@ -482,10 +501,15 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Boutique Investment Banking & Capital Advisory</h1>
-            <h2>Where Capital Markets Expertise Meets Modern Execution</h2>
+    <section class="hero" style="position:relative; min-height:60vh; display:flex; align-items:center; justify-content:center; overflow:hidden;">
+        <video autoplay muted loop playsinline poster="images/nyc photo 2.jpg" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index:-2;">
+            <source src="videos/nyc video.mp4" type="video/mp4">
+            <img src="images/nyc photo 2.jpg" alt="NYC Fallback" style="width:100%; height:100%; object-fit:cover;" />
+        </video>
+        <div class="hero-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(6,36,73,0.55); z-index:-1;"></div>
+        <div class="container" style="position:relative; z-index:1;">
+            <h1 style="color:#fff;">Boutique Investment Banking & Capital Advisory</h1>
+            <h2 style="color:#fff;">Where Capital Markets Expertise Meets Modern&nbsp;Execution</h2>
             <a href="#about" class="cta-button">Learn More</a>
         </div>
     </section>
@@ -494,24 +518,20 @@
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat-item">
+                <div class="stat-item fade-in-up" style="background:#fff; border:1.5px solid #062449; border-radius:14px; box-shadow:0 2px 12px rgba(6,36,73,0.06); padding:48px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:180px;">
                     <h3>$97B+</h3>
                     <p>In Aggregate Transaction Volume</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item fade-in-up" style="background:#fff; border:1.5px solid #062449; border-radius:14px; box-shadow:0 2px 12px rgba(6,36,73,0.06); padding:48px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:180px;">
                     <h3>30+ Years</h3>
                     <p>ECM Leadership Experience</p>
                 </div>
-                <div class="stat-item">
+                <div class="stat-item fade-in-up" style="background:#fff; border:1.5px solid #062449; border-radius:14px; box-shadow:0 2px 12px rgba(6,36,73,0.06); padding:48px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:180px;">
                     <h3>540+</h3>
                     <p>Transactions Completed</p>
                 </div>
-                <div class="stat-item">
-                    <h3>$10M–$300M</h3>
-                    <p>Typical Deal Size Range</p>
-                </div>
             </div>
-            <div style="text-align:center; margin-top:24px; color:var(--text-light); font-size:0.98rem;">
+            <div style="text-align:center; margin-top:24px; color:var(--primary-color); font-size:0.98rem;">
                 Transaction experience shown reflects the prior roles and deal history of Valcrest Capital’s advisory board.
             </div>
         </div>
@@ -523,35 +543,123 @@
             <h2 class="section-title">Principal Focus Areas</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Capital Markets Advisory</h3>
-                    <p>Our Capital Markets Advisory practice helps companies raise capital efficiently, optimize their capital structures, and position themselves for long-term success. We provide strategic guidance and hands-on execution across equity, debt, and hybrid capital solutions, with extensive experience in challenging situations and complex credits.</p>
+                    <h3>Capital Markets & Equity Advisory</h3>
+                    <p>We advise founders and companies on raising equity and hybrid capital, from early-stage growth rounds to late-stage private placements and public offerings. Our advisory team brings decades of experience structuring IPOs, follow-ons, and private placements across healthcare, technology, and financial sectors.</p>
                 </div>
                 <div class="service-card">
-                    <h3>M&A Strategic Advisory</h3>
-                    <p>Our M&A practice helps companies navigate strategic transactions efficiently, optimize deal structures, and position themselves for successful outcomes. We provide strategic guidance and hands-on execution across exits, acquisitions, and recapitalizations, with extensive experience in complex situations and challenging transactions.</p>
+                    <h3>M&amp;A Advisory</h3>
+                    <p>We guide clients through strategic M&amp;A transactions, including founder exits, acquisitions, recapitalizations, and secondaries. With deep experience in healthcare, tech, and services, our team delivers institutional-quality execution on middle-market deals ranging from $10M to $300M.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Strategic Advisory</h3>
-                    <p>Our Strategic Advisory practice helps companies navigate critical business decisions efficiently, optimize strategic positioning, and position themselves for sustainable growth. We provide strategic guidance and hands-on execution across corporate strategy, valuations, and fairness opinions, with extensive experience in complex situations and transformational initiatives.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Financial Restructuring</h3>
-                    <p>Our Financial Restructuring practice helps companies optimize capital structures efficiently, resolve financial challenges, and position themselves for operational recovery. We provide strategic guidance and hands-on execution across debt restructuring, balance sheet optimization, and liability management, with extensive experience in distressed situations and complex financial workouts.</p>
+                    <h3>Founder Liquidity &amp; Exit Planning</h3>
+                    <p>We support founders and business owners preparing for liquidity events, succession, and long-term transition. Whether through M&amp;A, recapitalization, or pre-sale strategy, we help clients preserve value, navigate timing and structure, and align outcomes with long-term personal and financial goals.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about" id="about">
+    <section class="about" id="about" style="padding:0; min-height:60vh; display:flex; align-items:stretch;">
+        <div style="flex:1; background:#062449; color:#fff; display:flex; flex-direction:column; justify-content:center; padding:80px 40px 80px 8vw; min-width:0;">
+            <div style="max-width:600px;">
+                <h2 class="section-title" style="color:#fff; text-align:left; font-size:2.8rem; margin-bottom:32px; line-height:1.1;">About Valcrest Capital</h2>
+                <p style="font-size:1.15rem; color:#fff; margin-bottom:24px; line-height:1.7;">Valcrest Capital is a boutique investment banking firm focused on capital raising, M&A, and founder liquidity for growth-stage and lower middle-market companies. Our team combines deep industry experience with modern execution capabilities, offering the sophistication of a large bank with the agility of a founder-led shop.</p>
+                <p style="font-size:1.15rem; color:#fff; margin-bottom:24px; line-height:1.7;">Our advisory board brings over 50 years of combined experience and has executed $97B+ in equity capital markets transactions, including IPOs, follow-ons, and private placements across sectors like healthcare, technology, and financial services. From strategic exits to complex capital structures, we provide institutional-quality guidance tailored to entrepreneurs and emerging managers.</p>
+                <p style="font-size:1.15rem; color:#fff; margin-bottom:36px; line-height:1.7;">By integrating AI-driven deal sourcing, automation, and data intelligence, we accelerate outreach, improve matchmaking, and streamline execution—allowing us to close high-impact transactions with speed, precision, and discretion.</p>
+                <a href="#contact" class="cta-button" style="background:#fff; color:#062449; border:none; font-weight:600; font-size:1.1rem; padding:16px 36px; border-radius:6px; display:inline-block; margin-top:8px;">Book a Call &rarr;</a>
+            </div>
+        </div>
+        <div style="flex:1; min-width:0; background:#222; position:relative;">
+            <img src="images/nyc photo 3.jpg" alt="Cityscape" style="width:100%; height:100%; object-fit:cover; object-position:center; display:block; min-height:400px;" />
+        </div>
+    </section>
+
+    <!-- Industries Covered Section -->
+    <section class="industries" style="background:#f7f7f7; padding:80px 0;">
         <div class="container">
-            <div class="about-content">
-                <h2 class="section-title">About Valcrest Capital</h2>
-                <p>Valcrest is a boutique investment bank that combines institutional-grade rigor with boutique agility to empower businesses through strategic capital solutions that create lasting value.</p>
-                <p>Our team has decades of deep relationships across capital markets, from institutional investors to family offices and strategic partners. Entrepreneurs first, bankers second - bringing a practical, ownership-minded approach because that's how deals get done.</p>
-                <p>Clients benefit from deep market expertise and sophisticated execution with unwavering focus on speed, precision, and efficiency. Partnering with visionary entrepreneurs, growth companies, and financial sponsors determined to reach their peak potential.</p>
-                <p>This is investment banking reimagined, where decades of market wisdom meet the innovation and speed that today's opportunities demand.</p>
-                <a href="#contact" class="cta-button">Book a Call</a>
+            <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2.7rem; font-weight:600; margin-bottom:56px; color:#062449;">Industries Covered</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; justify-items:center;">
+                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
+                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Healthcare & Life Sciences</div>
+                </div>
+                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
+                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Technology, AI & SaaS</div>
+                </div>
+                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
+                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Financial Services & Fintech</div>
+                </div>
+                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
+                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Consumer & Retail</div>
+                </div>
+                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
+                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Industrial & Manufacturing</div>
+                </div>
+                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
+                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
+                    <div style="font-size:1.35rem; font-weight:500; color:#111;">VC-Backed & PE-Owned Businesses</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section class="team" id="team" style="background: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url('images/nyc photo 2.jpg') center/cover no-repeat; padding:100px 0 60px 0;">
+        <div class="container">
+            <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2.7rem; font-weight:600; margin-bottom:56px; color:#fff;">Meet Our Team & Advisors</h2>
+            <div class="team-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:40px; justify-items:center;">
+                <div class="team-member-card" data-name="Tate Dewey" data-bio="Tate Dewey is Managing Partner at Valcrest Capital. With a background in demand generation across fintech and health tech, he’s driven $100M+ in attributable revenue for startups and public companies, including ventures acquired by industry leaders. He brings growth insight to strategic capital advisory." data-img="images/tate.jpg">
+                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                        <img src="images/tate.jpg" alt="Tate Dewey" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Tate Dewey</div>
+                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                    </div>
+                </div>
+                <div class="team-member-card" data-name="Brian Callanan" data-bio="Brian Callanan is CEO of Callanan Financial Advocates with 11+ years in estate planning, structured settlements, and premium financing. A former advisor at Raymond James, UBS, and MetLife, he brings deep expertise in succession planning, secondary market annuities, and real estate finance for high-net-worth individuals and business owners. Learn more about Brian Callanan <a href='https://thechiefexitofficer.com/home-page' target='_blank' style='color:#062449; text-decoration:underline;'>here</a>." data-img="images/brian.jpg">
+                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                        <img src="images/brian.jpg" alt="Brian Callanan" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Brian Callanan</div>
+                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                    </div>
+                </div>
+                <div class="team-member-card" data-name="Rudy Balseiro" data-bio="Rudy is a Managing Director at Kingswood U.S. with over 30 years of experience in Equity Capital Markets. Formerly Head of ECM at SMBC Nikko, Nomura, and Needham & Co., he has led origination and syndicate execution across 500+ equity transactions totaling $97B+, with deep sector expertise in healthcare and technology." data-img="images/rudy.jpg">
+                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                        <img src="images/rudy.jpg" alt="Rudy Balseiro" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Rudy Balseiro</div>
+                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                    </div>
+                </div>
+                <div class="team-member-card" data-name="Shawn Flynn" data-bio="Shawn Flynn is the Managing Director at SVH Capital, specializing in middle-market M&A and growth capital transactions in Silicon Valley. A hands-on advisor and founder of The Silicon Valley Podcast, he brings deep tech sector insight, guiding clients through $10M–$300M deals from origination to close with clarity and precision. Learn more about Shawn <a href='https://svhcapital.com/' target='_blank' style='color:#062449; text-decoration:underline;'>here</a>." data-img="images/shawn.png">
+                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                        <img src="images/shawn.png" alt="Shawn Flynn" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Shawn Flynn</div>
+                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                    </div>
+                </div>
+                <div class="team-member-card" data-name="Samuel" data-bio="Experienced Business Development Director with 5+ years in deal and demand origination. He has helped companies secure strategic partnerships from SMBs to public firms and developed Valcrest’s deal origination strategy." data-img="images/sam.jpg">
+                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                        <img src="images/sam.jpg" alt="Samuel" style="width:100%; max-width:200px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; margin-bottom:18px;" />
+                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Samuel</div>
+                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal for Team Member Bio -->
+        <div id="team-modal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
+            <div id="team-modal-content" style="background:#fff; border-radius:10px; max-width:1100px; width:90vw; min-height:400px; display:flex; flex-direction:row; align-items:stretch; box-shadow:0 8px 40px rgba(0,0,0,0.18); position:relative;">
+                <div style="flex:1; display:flex; align-items:center; justify-content:center; padding:40px; min-width:0;">
+                    <img id="modal-img" src="" alt="Team Member" style="width:100%; max-width:340px; aspect-ratio:1/1; object-fit:cover; border-radius:6px; border:2px solid #eee; background:#fafafa;" />
+                </div>
+                <div style="flex:2; padding:40px 40px 40px 0; display:flex; flex-direction:column; justify-content:center; min-width:0;">
+                    <h3 id="modal-name" style="font-family:'Playfair Display',serif; font-size:2.3rem; font-weight:600; color:#111; margin-bottom:24px;">Name</h3>
+                    <div id="modal-bio" style="font-size:1.15rem; color:#222; line-height:1.7;"></div>
+                </div>
+                <button id="modal-close" style="position:absolute; top:24px; right:32px; background:none; border:2px solid #222; border-radius:50%; width:40px; height:40px; font-size:1.7rem; color:#222; cursor:pointer; display:flex; align-items:center; justify-content:center;">&times;</button>
             </div>
         </div>
     </section>
@@ -581,6 +689,7 @@
                     <h3>Navigation</h3>
                     <a href="#about">About Us</a>
                     <a href="#services">Capabilities</a>
+                    <a href="#team">Our Team</a>
                     <a href="#contact">Contact</a>
                 </div>
                 <div class="footer-section">
@@ -641,6 +750,64 @@
             updateContactButton();
             window.addEventListener('resize', updateContactButton);
         });
+    </script>
+
+    <script>
+    // Team modal functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const modal = document.getElementById('team-modal');
+        const modalContent = document.getElementById('team-modal-content');
+        const modalImg = document.getElementById('modal-img');
+        const modalName = document.getElementById('modal-name');
+        const modalBio = document.getElementById('modal-bio');
+        const modalClose = document.getElementById('modal-close');
+        const teamCards = document.querySelectorAll('.team-member-card .read-more-btn');
+
+        teamCards.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const card = btn.closest('.team-member-card');
+                modalImg.src = card.getAttribute('data-img');
+                modalName.textContent = card.getAttribute('data-name');
+                modalBio.innerHTML = card.getAttribute('data-bio');
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                modal.style.display = 'none';
+            }
+        });
+    });
+    </script>
+
+    <script>
+    // Fade-in-up animation for stat cards
+    document.addEventListener('DOMContentLoaded', function() {
+        const statCards = document.querySelectorAll('.stat-item.fade-in-up');
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+            statCards.forEach(card => observer.observe(card));
+        } else {
+            // Fallback for old browsers
+            statCards.forEach(card => card.classList.add('visible'));
+        }
+    });
     </script>
 </body>
 </html> 
