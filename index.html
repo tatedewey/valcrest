@@ -53,7 +53,7 @@
 
         /* Header */
         header {
-            background-color: var(--white);
+            background-color: #fdf9f3;
             padding: 20px 0;
             border-bottom: 1px solid var(--border-color);
             position: fixed;
@@ -527,6 +527,22 @@
         /* Hero fallback image for mobile and no video support */
         .hero {
             background: url('images/nyc photo 2.jpg') center/cover no-repeat;
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(6,36,73,0.78); /* Stronger overlay for readability */
+            z-index: 0;
+            pointer-events: none;
+        }
+        .hero > .container {
+            position: relative;
+            z-index: 1;
         }
         .hero video {
             display: block;
@@ -546,6 +562,8 @@
             margin-bottom: 18px;
             background: #f0f0f0;
             display: block;
+            margin-left: auto;
+            margin-right: auto;
         }
     </style>
 </head>
@@ -576,11 +594,11 @@
             <source src="videos/nyc video.mp4" type="video/mp4">
             <img src="images/nyc photo 2.jpg" alt="NYC Fallback" style="width:100%; height:100%; object-fit:cover;" />
         </video>
-        <div class="hero-overlay" style="position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(6,36,73,0.55); z-index:-1;"></div>
+        <!-- Removed .hero-overlay div, overlay is now handled in CSS -->
         <div class="container" style="position:relative; z-index:1;">
-            <h1 style="color:#fff;">Boutique Investment Banking & Capital Advisory</h1>
-            <h2 style="color:#fff;">Where Capital Markets Expertise Meets Modern&nbsp;Execution</h2>
-            <a href="#about" class="cta-button">Learn More</a>
+            <h1 style="color:#fff;">Where Capital Markets Expertise Meets Modern Execution</h1>
+            <h2 style="color:#fff;">Combining institutional-grade rigor with boutique agility to empower businesses through strategic solutions.</h2>
+                <a href="#about" class="cta-button">Learn More</a>
         </div>
     </section>
 
@@ -593,8 +611,8 @@
                     <p>In Aggregate Transaction Volume</p>
                 </div>
                 <div class="stat-item fade-in-up" style="background:#fff; border:1.5px solid #062449; border-radius:14px; box-shadow:0 2px 12px rgba(6,36,73,0.06); padding:48px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:180px;">
-                    <h3>30+ Years</h3>
-                    <p>ECM Leadership Experience</p>
+                    <h3>50+ Years</h3>
+                    <p>Leadership Experience</p>
                 </div>
                 <div class="stat-item fade-in-up" style="background:#fff; border:1.5px solid #062449; border-radius:14px; box-shadow:0 2px 12px rgba(6,36,73,0.06); padding:48px 24px; display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:180px;">
                     <h3>540+</h3>
@@ -610,19 +628,19 @@
     <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <h2 class="section-title">Principal Focus Areas</h2>
+            <h2 class="section-title">Principal Focus Areas:</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Capital Markets & Equity Advisory</h3>
-                    <p>We advise founders and companies on raising equity and hybrid capital, from early-stage growth rounds to late-stage private placements and public offerings. Our advisory team brings decades of experience structuring IPOs, follow-ons, and private placements across healthcare, technology, and financial sectors.</p>
+                    <h3>Capital Markets Advisory</h3>
+                    <p>We advise companies on raising equity and hybrid capital, from private placements to public offerings and structured financing solutions. Our advisory team brings decades of experience structuring complex transactions, capital restructurings, and market offerings.</p>
                 </div>
                 <div class="service-card">
-                    <h3>M&amp;A Advisory</h3>
-                    <p>We guide clients through strategic M&amp;A transactions, including founder exits, acquisitions, recapitalizations, and secondaries. With deep experience in healthcare, tech, and services, our team delivers institutional-quality execution on middle-market deals ranging from $10M to $300M.</p>
+                    <h3>M&amp;A Strategic Advisory</h3>
+                    <p>We guide companies through strategic M&amp;A transactions, from founder exits to acquisitions and recapitalizations. Our advisory team brings decades of experience structuring complex deals, optimizing transaction structures, and delivering successful outcomes.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Founder Liquidity &amp; Exit Planning</h3>
-                    <p>We support founders and business owners preparing for liquidity events, succession, and long-term transition. Whether through M&amp;A, recapitalization, or pre-sale strategy, we help clients preserve value, navigate timing and structure, and align outcomes with long-term personal and financial goals.</p>
+                    <h3>Financial Restructuring</h3>
+                    <p>We guide companies through financial restructuring transactions, from debt workouts to balance sheet optimization and recapitalizations. Our advisory team brings decades of experience structuring complex deals, resolving financial challenges, and delivering successful outcomes.</p>
                 </div>
             </div>
         </div>
@@ -633,9 +651,9 @@
         <div style="flex:1; background:#062449; color:#fff; display:flex; flex-direction:column; justify-content:center; padding:80px 40px 80px 8vw; min-width:0;">
             <div style="max-width:600px;">
                 <h2 class="section-title" style="color:#fff; text-align:left; font-size:2.8rem; margin-bottom:32px; line-height:1.1;">About Valcrest Capital</h2>
-                <p style="font-size:1.15rem; color:#fff; margin-bottom:24px; line-height:1.7;">Valcrest Capital is a boutique investment banking firm focused on capital raising, M&A, and founder liquidity for growth-stage and lower middle-market companies. Our team combines deep industry experience with modern execution capabilities, offering the sophistication of a large bank with the agility of a founder-led shop.</p>
-                <p style="font-size:1.15rem; color:#fff; margin-bottom:24px; line-height:1.7;">Our advisory board brings over 50 years of combined experience and has executed $97B+ in equity capital markets transactions, including IPOs, follow-ons, and private placements across sectors like healthcare, technology, and financial services. From strategic exits to complex capital structures, we provide institutional-quality guidance tailored to entrepreneurs and emerging managers.</p>
-                <p style="font-size:1.15rem; color:#fff; margin-bottom:36px; line-height:1.7;">By integrating AI-driven deal sourcing, automation, and data intelligence, we accelerate outreach, improve matchmaking, and streamline execution—allowing us to close high-impact transactions with speed, precision, and discretion.</p>
+                <p style="font-size:1.15rem; color:#fff; margin-bottom:24px; line-height:1.7;">Valcrest is a boutique investment bank that combines institutional-grade rigor with boutique agility to empower lower middle-market companies through strategic capital solutions that create lasting value.</p>
+                <p style="font-size:1.15rem; color:#fff; margin-bottom:24px; line-height:1.7;">Our advisory board brings over 50 years of combined experience and has executed $97B+ in capital markets transactions, including IPOs, follow-ons, and private placements. Entrepreneurs first, bankers second - we offer the sophistication of a large bank with the agility of a founder-led shop.</p>
+                <p style="font-size:1.15rem; color:#fff; margin-bottom:36px; line-height:1.7;">By integrating AI and data intelligence, we accelerate outreach, improve matchmaking, and deliver superior execution. We partner with visionary entrepreneurs and growth companies determined to reach their peak potential.</p>
                 <a href="#contact" class="cta-button" style="background:#fff; color:#062449; border:none; font-weight:600; font-size:1.1rem; padding:16px 36px; border-radius:6px; display:inline-block; margin-top:8px;">Book a Call &rarr;</a>
             </div>
         </div>
@@ -648,30 +666,42 @@
     <section class="industries" style="background:#f7f7f7; padding:80px 0;">
         <div class="container">
             <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2.7rem; font-weight:600; margin-bottom:56px; color:#062449;">Industries Covered</h2>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:40px; justify-items:center;">
-                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
-                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Healthcare & Life Sciences</div>
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon"><!-- Healthcare & Life Sciences -->
+                        <svg width="28" height="28" fill="none" stroke="#062449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <div class="industry-title">Healthcare & Life Sciences</div>
                 </div>
-                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
-                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Technology, AI & SaaS</div>
+                <div class="industry-card">
+                    <div class="industry-icon"><!-- Commercial Real Estate -->
+                        <svg width="28" height="28" fill="none" stroke="#062449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="7" height="13"/><rect x="14" y="3" width="7" height="17"/></svg>
+                    </div>
+                    <div class="industry-title">Commercial Real Estate</div>
                 </div>
-                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
-                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Financial Services & Fintech</div>
+                <div class="industry-card">
+                    <div class="industry-icon"><!-- Technology -->
+                        <svg width="28" height="28" fill="none" stroke="#062449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+                    </div>
+                    <div class="industry-title">Technology</div>
                 </div>
-                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
-                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Consumer & Retail</div>
+                <div class="industry-card">
+                    <div class="industry-icon"><!-- Industrial & Manufacturing -->
+                        <svg width="28" height="28" fill="none" stroke="#062449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="13" width="18" height="8"/><path d="M3 13V7l6 6V7l6 6V7l6 6"/></svg>
+                    </div>
+                    <div class="industry-title">Industrial & Manufacturing</div>
                 </div>
-                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
-                    <div style="font-size:1.35rem; font-weight:500; color:#111;">Industrial & Manufacturing</div>
+                <div class="industry-card">
+                    <div class="industry-icon"><!-- Financial Services & Fintech -->
+                        <svg width="28" height="28" fill="none" stroke="#062449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3v4M8 3v4"/><path d="M12 12v4"/><circle cx="12" cy="16" r="1"/></svg>
+                    </div>
+                    <div class="industry-title">Financial Services & Fintech</div>
                 </div>
-                <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:48px 24px; text-align:center; min-width:0; min-height:220px; display:flex; flex-direction:column; align-items:center; justify-content:center;">
-                    <div style="margin-bottom:24px;"><span style="display:inline-block; background:#f0f0f0; border-radius:50%; width:48px; height:48px; line-height:48px;"><svg width="24" height="24" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/></svg></span></div>
-                    <div style="font-size:1.35rem; font-weight:500; color:#111;">VC-Backed & PE-Owned Businesses</div>
+                <div class="industry-card">
+                    <div class="industry-icon"><!-- Consumer & Retail -->
+                        <svg width="28" height="28" fill="none" stroke="#062449" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M16 3v4M8 3v4"/><circle cx="12" cy="16" r="1"/></svg>
+                    </div>
+                    <div class="industry-title">Consumer & Retail</div>
                 </div>
             </div>
         </div>
@@ -680,44 +710,84 @@
     <!-- Meet Our Team Section -->
     <section class="team" id="team" style="background: linear-gradient(rgba(20,20,20,0.7),rgba(20,20,20,0.7)), url('images/nyc photo 2.jpg') center/cover no-repeat; padding:100px 0 60px 0;">
         <div class="container">
-            <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2.7rem; font-weight:600; margin-bottom:56px; color:#fff;">Meet Our Team & Advisors</h2>
-            <div class="team-grid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:40px; justify-items:center;">
-                <div class="team-member-card" data-name="Tate Dewey" data-bio="Tate Dewey is Managing Partner at Valcrest Capital. With a background in demand generation across fintech and health tech, he’s driven $100M+ in attributable revenue for startups and public companies, including ventures acquired by industry leaders. He brings growth insight to strategic capital advisory." data-img="images/tate.jpg">
-                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/tate.jpg" alt="Tate Dewey" />
-                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Tate Dewey</div>
-                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+            <h2 style="text-align:center; font-family:'Playfair Display',serif; font-size:2.7rem; font-weight:600; margin-bottom:56px; color:#fff;">Our Team</h2>
+            <div class="team-grid">
+                <div class="team-row top">
+                    <div class="team-member-card" data-name="Tate Dewey" data-bio="Tate Dewey is the Managing Partner at Valcrest Capital. With a background in demand generation across fintech and healthtech, he’s driven $100M+ in attributable revenue for startups and public companies, including ventures acquired by industry leaders. He brings growth insight to strategic capital advisory." data-img="images/tate.jpg">
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                            <img src="images/tate.jpg" alt="Tate Dewey" />
+                            <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Tate Dewey</div>
+                            <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                        </div>
+                    </div>
+                    <div class="team-member-card" data-name="Brian Callanan" data-bio="Brian Callanan serves as Strategic Advisor at Valcrest Capital and is the CEO of Callanan Financial Advocates, bringing 11+ years of expertise in estate planning, structured settlements, and premium financing. A former advisor at Raymond James, UBS, and MetLife, he specializes in succession planning, secondary market annuities, and real estate finance for high-net-worth individuals and business owners." data-img="images/brian.jpg">
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                            <img src="images/brian.jpg" alt="Brian Callanan" />
+                            <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Brian Callanan</div>
+                            <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                        </div>
+                    </div>
+                    <div class="team-member-card" data-name="Rudy Balseiro" data-bio="Rudy serves as Senior Advisor at Valcrest Capital and is a Managing Director at Kingswood U.S., bringing over 30 years of experience in Equity Capital Markets. Formerly Head of ECM at SMBC Nikko, Nomura, and Needham & Co., he has led origination and syndicate execution across 500+ equity transactions totaling $97B+, with deep sector expertise in healthcare and technology." data-img="images/rudy.jpg">
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                            <img src="images/rudy.jpg" alt="Rudy Balseiro" />
+                            <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Rudy Balseiro</div>
+                            <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                        </div>
                     </div>
                 </div>
-                <div class="team-member-card" data-name="Brian Callanan" data-bio="Brian Callanan is CEO of Callanan Financial Advocates with 11+ years in estate planning, structured settlements, and premium financing. A former advisor at Raymond James, UBS, and MetLife, he brings deep expertise in succession planning, secondary market annuities, and real estate finance for high-net-worth individuals and business owners. Learn more about Brian Callanan <a href='https://thechiefexitofficer.com/home-page' target='_blank' style='color:#062449; text-decoration:underline;'>here</a>." data-img="images/brian.jpg">
-                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/brian.jpg" alt="Brian Callanan" />
-                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Brian Callanan</div>
-                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                <div class="team-row bottom">
+                    <div class="team-member-card" data-name="Shawn Flynn" data-bio="Shawn Flynn serves as Strategic Advisor at Valcrest Capital and is the Managing Director at SVH Capital, specializing in middle-market M&A and growth capital transactions in Silicon Valley. A hands-on advisor and founder of The Silicon Valley Podcast, he brings deep tech sector insight, guiding clients through $10M–$300M deals from origination to close with clarity and precision." data-img="images/shawn.png">
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                            <img src="images/shawn.png" alt="Shawn Flynn" />
+                            <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Shawn Flynn</div>
+                            <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                        </div>
                     </div>
-                </div>
-                <div class="team-member-card" data-name="Rudy Balseiro" data-bio="Rudy is a Managing Director at Kingswood U.S. with over 30 years of experience in Equity Capital Markets. Formerly Head of ECM at SMBC Nikko, Nomura, and Needham & Co., he has led origination and syndicate execution across 500+ equity transactions totaling $97B+, with deep sector expertise in healthcare and technology." data-img="images/rudy.jpg">
-                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/rudy.jpg" alt="Rudy Balseiro" />
-                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Rudy Balseiro</div>
-                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
-                    </div>
-                </div>
-                <div class="team-member-card" data-name="Shawn Flynn" data-bio="Shawn Flynn is the Managing Director at SVH Capital, specializing in middle-market M&A and growth capital transactions in Silicon Valley. A hands-on advisor and founder of The Silicon Valley Podcast, he brings deep tech sector insight, guiding clients through $10M–$300M deals from origination to close with clarity and precision. Learn more about Shawn <a href='https://svhcapital.com/' target='_blank' style='color:#062449; text-decoration:underline;'>here</a>." data-img="images/shawn.png">
-                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/shawn.png" alt="Shawn Flynn" />
-                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Shawn Flynn</div>
-                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
-                    </div>
-                </div>
-                <div class="team-member-card" data-name="Samuel" data-bio="Experienced Business Development Director with 5+ years in deal and demand origination. He has helped companies secure strategic partnerships from SMBs to public firms and developed Valcrest’s deal origination strategy." data-img="images/sam.jpg">
-                    <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
-                        <img src="images/sam.jpg" alt="Samuel" />
-                        <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Samuel</div>
-                        <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                    <div class="team-member-card" data-name="Samuel Aureliano" data-bio="Samuel leads business development at Valcrest Capital, spearheading the firm's origination and partnership initiatives. A proven relationship builder, he has orchestrated strategic partnerships and high-value introductions from middle-market to Fortune 500 companies and developed Valcrest's systematic origination approach." data-img="images/sam.jpg">
+                        <div style="background:#fff; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.04); padding:24px; text-align:center;">
+                            <img src="images/sam.jpg" alt="Samuel" />
+                            <div style="font-size:1.15rem; font-weight:600; color:#111; margin-bottom:12px;">Samuel Aureliano</div>
+                            <button class="read-more-btn" style="background:none; border:none; color:#111; font-size:1rem; cursor:pointer; display:flex; align-items:center; gap:6px; margin:0 auto;"> <span style="font-size:1.1em;">&#8594;</span> Read More</button>
+                        </div>
                     </div>
                 </div>
             </div>
+            <style>
+            .team-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            .team-row {
+                display: flex;
+                width: 100%;
+                gap: 40px;
+            }
+            .team-row.top {
+                justify-content: center;
+                margin-bottom: 40px;
+            }
+            .team-row.bottom {
+                justify-content: center;
+            }
+            .team-member-card {
+                max-width: 320px;
+                width: 100%;
+            }
+            @media (max-width: 900px) {
+                .team-row {
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 28px;
+                }
+                .team-row.top {
+                    margin-bottom: 28px;
+                }
+            }
+            </style>
         </div>
         <!-- Modal for Team Member Bio -->
         <div id="team-modal" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); align-items:center; justify-content:center;">
@@ -738,7 +808,7 @@
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-left">
-                <h2>Connect with us.<br>We want to hear from you.</h2>
+                <h2>Let's talk. We want to hear from you.</h2>
                 <p>Looking to raise capital, execute a transaction, or explore strategic options? We're ready to put our experience to work for you.</p>
                 <a href="mailto:contact@valcrestcapital.com" class="cta-button">Contact Us</a>
             </div>
@@ -754,23 +824,21 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Navigation</h3>
-                    <a href="#about">About Us</a>
-                    <a href="#services">Capabilities</a>
-                    <a href="#team">Our Team</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <a href="mailto:contact@valcrestcapital.com">contact@valcrestcapital.com</a>
-                    <a href="https://linkedin.com/company/valcrestcapital" target="_blank">LinkedIn</a>
-                </div>
+            <div class="footer-content" style="display:flex; justify-content:center; align-items:center; margin-bottom:40px;">
+                <nav style="width:100%; display:flex; flex-direction:row; justify-content:center; gap:48px; flex-wrap:wrap;">
+                    <a href="#about" style="color:#fff; font-size:1.1rem; font-weight:500; text-decoration:none; margin:0 16px;">About Us</a>
+                    <a href="#services" style="color:#fff; font-size:1.1rem; font-weight:500; text-decoration:none; margin:0 16px;">Capabilities</a>
+                    <a href="#team" style="color:#fff; font-size:1.1rem; font-weight:500; text-decoration:none; margin:0 16px;">Our Team</a>
+                    <a href="#contact" style="color:#fff; font-size:1.1rem; font-weight:500; text-decoration:none; margin:0 16px;">Contact</a>
+                </nav>
             </div>
             <div class="footer-compliance">
                 <p>Securities are offered through Finalis Securities LLC Member FINRA / SIPC. Valcrest Capital is not a registered broker-dealer, and Finalis Securities LLC and Valcrest Capital are separate, unaffiliated entities.</p>
-                <p><a href="#" target="_blank">Finalis Privacy Policy</a> | <a href="#" target="_blank">Finalis Business Continuity Plan</a> | <a href="https://brokercheck.finra.org" target="_blank">FINRA BrokerCheck</a></p>
+                <p style="color:#fff; font-weight:500;">
+                    <a href="#" target="_blank" style="color:#fff; text-decoration:underline;">Finalis Privacy Policy</a> |
+                    <a href="#" target="_blank" style="color:#fff; text-decoration:underline;">Finalis Business Continuity Plan</a> |
+                    <a href="https://brokercheck.finra.org" target="_blank" style="color:#fff; text-decoration:underline;">FINRA BrokerCheck</a>
+                </p>
                 <p>www.valcrestcapital.com (the "Valcrest Capital Website") is a website operated by Valcrest Capital, a privately held Wyoming limited liability company. Valcrest Capital provides financial and strategic consulting services, mergers and acquisitions services, fairness opinions, etc.</p>
                 <p><strong>Disclaimer:</strong> This website is for informational purposes only, is not an offer, solicitation, recommendation, or commitment for any transaction or to buy or sell any security or other financial product, and is not intended as investment advice or as a confirmation of any transaction. Products and services on this website may not be available for residents of certain jurisdictions. Please consult with a Finalis Securities' registered representative regarding the product or service in question for further information. Investments involve risk and are not guaranteed to appreciate. Any market price, indicative value, estimate, view, opinion, data, or other information herein is not warranted as to completeness or accuracy, is subject to change without notice, and Valcrest Capital along with Finalis Securities LLC accepts no liability for its use or to update it or keep it current.</p>
             </div>
@@ -879,5 +947,48 @@
         }
     });
     </script>
+    <style>
+    .industries-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        justify-items: center;
+    }
+    .industry-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+        padding: 48px 24px;
+        text-align: center;
+        min-width: 0;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        max-width: 370px;
+        transition: box-shadow 0.2s;
+    }
+    .industry-card:hover {
+        box-shadow: 0 8px 32px rgba(6,36,73,0.10);
+    }
+    .industry-icon {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 56px;
+        height: 56px;
+        background: #f0f0f0;
+        border-radius: 50%;
+    }
+    .industry-title {
+        font-size: 1.35rem;
+        font-weight: 500;
+        color: #111;
+        margin-top: 0;
+    }
+    </style>
 </body>
 </html> 
