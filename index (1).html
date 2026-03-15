@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Valcrest Capital — Multifamily Debt Brokerage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink:       #0d0e10;
+      --ink-soft:  #161719;
+      --rule:      #2a2b2e;
+      --muted:     #5a5c62;
+      --body:      #9a9ca3;
+      --light:     #d4d5d9;
+      --white:     #f0f0ee;
+      --gold:      #b8955a;
+      --gold-lt:   #cead74;
+      --gold-dim:  rgba(184,149,90,0.12);
+      --serif:     'Cormorant Garamond', Georgia, serif;
+      --sans:      'Barlow', sans-serif;
+      --cond:      'Barlow Condensed', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ink);
+      color: var(--white);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 56px;
+      height: 72px;
+      background: rgba(13,14,16,0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.04em;
+      color: var(--white);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--gold); }
+
+    .nav-links {
+      display: flex; gap: 40px; list-style: none;
+    }
+    .nav-links a {
+      font-family: var(--cond);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--body);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      font-family: var(--cond);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      border: 1px solid var(--gold);
+      padding: 9px 22px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold); color: var(--ink); }
+
+    /* ── HERO ── */
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: flex-end;
+      padding: 72px 56px 96px;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute; inset: 0;
+      background:
+        linear-gradient(to bottom, rgba(13,14,16,0.3) 0%, rgba(13,14,16,0.75) 60%, var(--ink) 100%),
+        url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1600&q=80') center/cover no-repeat;
+    }
+
+    /* grain overlay */
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-label {
+      position: relative;
+      font-family: var(--cond);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .hero-label::before {
+      content: '';
+      display: block; width: 40px; height: 1px; background: var(--gold);
+    }
+
+    .hero-h1 {
+      position: relative;
+      font-family: var(--serif);
+      font-size: clamp(3rem, 6.5vw, 6rem);
+      font-weight: 300;
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      color: var(--white);
+      max-width: 820px;
+      margin-bottom: 32px;
+    }
+
+    .hero-h1 em {
+      font-style: italic;
+      color: var(--gold-lt);
+    }
+
+    .hero-sub {
+      position: relative;
+      font-size: 1.05rem;
+      font-weight: 300;
+      color: var(--body);
+      max-width: 520px;
+      margin-bottom: 48px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      position: relative;
+      display: flex; gap: 20px; align-items: center; flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      font-family: var(--cond);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ink);
+      background: var(--gold);
+      padding: 14px 32px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--gold-lt); transform: translateY(-1px); }
+
+    .btn-ghost {
+      font-family: var(--cond);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light);
+      text-decoration: none;
+      display: flex; align-items: center; gap: 10px;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--white); }
+    .btn-ghost::after { content: '↓'; font-size: 1rem; }
+
+    /* ── HOW IT WORKS BAND ── */
+    #how-it-works {
+      background: var(--ink-soft);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 64px 56px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1fr;
+      gap: 0;
+      align-items: center;
+    }
+
+    .how-step {
+      padding: 0 48px;
+    }
+    .how-step:first-child { padding-left: 0; }
+    .how-step:last-child { padding-right: 0; }
+
+    .how-num {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 300;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 16px;
+      opacity: 0.5;
+    }
+
+    .how-title {
+      font-family: var(--cond);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .how-desc {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.65;
+    }
+
+    .how-arrow {
+      font-size: 1.2rem;
+      color: var(--rule);
+      padding: 0 8px;
+      align-self: center;
+    }
+
+    @media (max-width: 900px) {
+      #how-it-works {
+        grid-template-columns: 1fr;
+        padding: 48px 28px;
+        gap: 0;
+      }
+      .how-step {
+        padding: 32px 0;
+        border-bottom: 1px solid var(--rule);
+      }
+      .how-step:last-child { border-bottom: none; }
+      .how-arrow { display: none; }
+    }
+
+    /* ── SECTION COMMONS ── */
+    section { padding: 112px 56px; }
+
+    .section-label {
+      font-family: var(--cond);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .section-label::before {
+      content: '';
+      display: block; width: 32px; height: 1px; background: var(--gold);
+    }
+
+    .section-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--white);
+      margin-bottom: 20px;
+    }
+
+    .section-intro {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--body);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--ink); }
+
+    .services-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: end;
+      margin-bottom: 72px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1px;
+      background: var(--rule);
+      border: 1px solid var(--rule);
+    }
+
+    .service-card {
+      background: var(--ink-soft);
+      padding: 48px;
+      transition: background 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card:hover { background: #1b1c1f; }
+    .service-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+
+    .service-num {
+      font-family: var(--cond);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      color: var(--muted);
+      margin-bottom: 32px;
+    }
+
+    .service-title {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+
+    .service-desc {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.7;
+    }
+
+    /* ── ENGAGEMENTS ── */
+    #engagements {
+      background: var(--ink-soft);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .eng-header {
+      display: flex; flex-direction: column; align-items: flex-start;
+      margin-bottom: 64px;
+    }
+
+    .eng-disclaimer {
+      font-family: var(--cond);
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      text-align: left;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+
+    .eng-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .eng-card {
+      background: var(--ink);
+      border: 1px solid var(--rule);
+      padding: 48px;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .eng-card:hover { border-color: var(--gold); }
+
+    .eng-type {
+      font-family: var(--cond);
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+
+    .eng-amount {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .eng-deal {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--light);
+      margin-bottom: 24px;
+    }
+
+    .eng-divider {
+      width: 40px; height: 1px;
+      background: var(--rule);
+      margin-bottom: 24px;
+    }
+
+    .eng-outcome {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.65;
+    }
+
+    .eng-outcome strong {
+      color: var(--gold-lt);
+      font-weight: 500;
+    }
+
+    .eng-market {
+      margin-top: 32px;
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--cond);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .eng-market::before {
+      content: '◎';
+      color: var(--gold);
+      font-size: 0.6rem;
+    }
+
+    /* ── ABOUT ── */
+    #about {
+      background: var(--ink);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 96px;
+      align-items: start;
+    }
+
+    .about-body {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.8;
+    }
+    .about-body p + p { margin-top: 20px; }
+    .about-body strong { color: var(--light); font-weight: 400; }
+
+    .about-pillars {
+      display: flex; flex-direction: column; gap: 0;
+      border: 1px solid var(--rule);
+    }
+
+    .pillar {
+      padding: 28px 36px;
+      border-bottom: 1px solid var(--rule);
+      display: flex; gap: 20px; align-items: flex-start;
+    }
+    .pillar:last-child { border-bottom: none; }
+
+    .pillar-icon {
+      width: 32px; height: 32px;
+      border: 1px solid var(--gold-dim);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .pillar-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; }
+
+    .pillar-title {
+      font-family: var(--cond);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light);
+      margin-bottom: 6px;
+    }
+
+    .pillar-text {
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--body);
+      line-height: 1.6;
+    }
+
+    /* ── CTA ── */
+    #contact {
+      background: var(--gold-dim);
+      border-top: 1px solid rgba(184,149,90,0.2);
+      padding: 112px 56px;
+      text-align: center;
+    }
+
+    #contact .section-label { justify-content: center; }
+    #contact .section-label::before { display: none; }
+
+    .cta-h2 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+    .cta-h2 em { font-style: italic; color: var(--gold-lt); }
+
+    .cta-sub {
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--body);
+      margin-bottom: 48px;
+      max-width: 480px;
+      margin-left: auto; margin-right: auto;
+      line-height: 1.7;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--ink-soft);
+      border-top: 1px solid var(--rule);
+      padding: 56px;
+    }
+
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      margin-bottom: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .footer-logo {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-weight: 400;
+      color: var(--white);
+      margin-bottom: 12px;
+    }
+    .footer-logo span { color: var(--gold); }
+
+    .footer-tagline {
+      font-family: var(--cond);
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex; gap: 48px;
+    }
+
+    .footer-col-title {
+      font-family: var(--cond);
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .footer-col a {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 300;
+      color: var(--body);
+      text-decoration: none;
+      margin-bottom: 8px;
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+
+    .footer-legal {
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 900px;
+    }
+    .footer-legal p + p { margin-top: 10px; }
+
+    .footer-legal a {
+      color: var(--muted);
+      text-decoration: underline;
+      transition: color 0.2s;
+    }
+    .footer-legal a:hover { color: var(--body); }
+
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 36px;
+      padding-top: 28px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .footer-copy {
+      font-family: var(--cond);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+    }
+
+    .footer-reg-links {
+      display: flex; gap: 24px;
+    }
+    .footer-reg-links a {
+      font-family: var(--cond);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-reg-links a:hover { color: var(--body); }
+
+    /* ── FADE-IN ANIMATIONS ── */
+    .js-ready .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .js-ready .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .js-ready .reveal-delay-1 { transition-delay: 0.1s; }
+    .js-ready .reveal-delay-2 { transition-delay: 0.2s; }
+    .js-ready .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      nav { padding: 0 28px; }
+      .nav-links { display: none; }
+      section, #stats, footer { padding-left: 28px; padding-right: 28px; }
+      #hero { padding: 0 28px 72px; }
+      #stats { grid-template-columns: 1fr; gap: 32px; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--rule); padding: 0 0 32px; }
+      .stat-item:last-child { border-bottom: none; }
+      .services-header { grid-template-columns: 1fr; gap: 32px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .eng-grid { grid-template-columns: 1fr; }
+      .about-grid { grid-template-columns: 1fr; gap: 48px; }
+      .eng-header { flex-direction: column; gap: 16px; }
+      .eng-disclaimer { text-align: left; }
+      .footer-top { flex-direction: column; gap: 40px; }
+      .footer-links { flex-direction: column; gap: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Valcrest <span>Capital</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Capabilities</a></li>
+      <li><a href="#engagements">Engagements</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+    <a href="https://calendly.com/tate-valcrestcapital/30min" target="_blank" class="nav-cta">Book a Call</a>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <p class="hero-label">Multifamily Debt Brokerage</p>
+    <h1 class="hero-h1">Financing for<br><em>Multifamily</em><br>Sponsors &amp; Developers</h1>
+    <p class="hero-sub">Valcrest Capital places debt for multifamily acquisitions, construction, and value-add transactions — connecting sponsors and developers with the right capital at the right terms.</p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/tate-valcrestcapital/30min" target="_blank" class="btn-primary">Start a Conversation</a>
+      <a href="#services" class="btn-ghost">Our Capabilities</a>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <div id="how-it-works">
+    <div class="how-step">
+      <div class="how-num">01</div>
+      <div class="how-title">Share Your Deal</div>
+      <p class="how-desc">Tell us about your asset, business plan, and financing needs. We'll quickly assess fit and outline our approach.</p>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-num">02</div>
+      <div class="how-title">We Go to Market</div>
+      <p class="how-desc">We target the right lenders for your specific deal — not a mass blast. Our relationships drive faster, more competitive responses.</p>
+    </div>
+    <div class="how-arrow">→</div>
+    <div class="how-step">
+      <div class="how-num">03</div>
+      <div class="how-title">You Choose Your Terms</div>
+      <p class="how-desc">We present your options, walk you through the tradeoffs, and support you through closing. You pick the capital that fits.</p>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="services-header">
+      <div>
+        <p class="section-label reveal">Capabilities</p>
+        <h2 class="section-h2 reveal reveal-delay-1">Debt products<br>across the capital stack</h2>
+      </div>
+      <p class="section-intro reveal reveal-delay-2">We work across the full range of multifamily debt structures — from stabilized agency executions to ground-up construction and structured preferred equity.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-num">01</div>
+        <h3 class="service-title">Bridge &amp; Transitional Financing</h3>
+        <p class="service-desc">Short-term debt solutions for acquisitions, lease-up, and value-add repositioning. We source bridge capital from debt funds, banks, and credit facilities aligned to your business plan timeline.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-num">02</div>
+        <h3 class="service-title">Construction &amp; Development Loans</h3>
+        <p class="service-desc">Ground-up and substantial rehabilitation financing for multifamily and build-to-rent projects. We access construction lenders — including family offices and debt funds — for complex development capital.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-num">03</div>
+        <h3 class="service-title">Permanent &amp; Agency Financing</h3>
+        <p class="service-desc">Long-term fixed-rate executions through agency programs and balance sheet lenders for stabilized multifamily assets. We optimize proceeds, rate, and structure for your hold strategy.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-num">04</div>
+        <h3 class="service-title">Mezzanine &amp; Preferred Equity</h3>
+        <p class="service-desc">Structured junior capital to bridge the gap between senior debt and equity. We place mezzanine and preferred equity with institutional capital partners for sponsors seeking higher leverage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENTS -->
+  <section id="engagements">
+    <div class="eng-header">
+      <div>
+        <p class="section-label reveal">Selected Engagements</p>
+        <h2 class="section-h2 reveal reveal-delay-1">Recent transaction<br>activity</h2>
+      </div>
+      <p class="eng-disclaimer reveal">Representative engagements. Past activity is not indicative of future results.</p>
+    </div>
+    <div class="eng-grid">
+
+      <div class="eng-card reveal">
+        <div class="eng-type">Senior Acquisition Loan · Multifamily</div>
+        <div class="eng-amount">$35,000,000</div>
+        <div class="eng-deal">Multifamily Portfolio Acquisition</div>
+        <div class="eng-divider"></div>
+        <p class="eng-outcome">Sourced <strong>14 competitive lender quotes within 72 hours</strong> of going to market. Full lender response generated through direct relationships, delivering maximum pricing tension and execution certainty for the sponsor.</p>
+        <div class="eng-market">Danville, VA</div>
+      </div>
+
+      <div class="eng-card reveal reveal-delay-1">
+        <div class="eng-type">Construction Loan · Build-to-Rent</div>
+        <div class="eng-amount">$10,000,000</div>
+        <div class="eng-deal">Ground-Up Build-to-Rent Community</div>
+        <div class="eng-divider"></div>
+        <p class="eng-outcome">Generated interest from <strong>multiple family offices within 14 days</strong>, including several booked meetings with active construction capital sources. Demonstrated access to private capital for non-agency product types.</p>
+        <div class="eng-market">Waco, TX</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="about-grid">
+      <div>
+        <p class="section-label reveal">About Valcrest</p>
+        <h2 class="section-h2 reveal reveal-delay-1">Built for multifamily.<br>Focused on execution.</h2>
+        <div class="about-body reveal reveal-delay-2">
+          <p>Valcrest Capital is a commercial real estate debt brokerage exclusively focused on multifamily transactions. We work with <strong>real estate sponsors, developers, and investment companies</strong> navigating acquisitions, ground-up development, and value-add repositioning.</p>
+          <p>Our approach is direct and relationship-driven. We go to market with precision — targeting the right lenders for each transaction rather than broadcasting to the broadest possible audience. The result is <strong>faster response, tighter pricing, and better execution</strong> for our clients.</p>
+          <p>We are deliberate about the engagements we take on. Every client relationship receives senior-level attention throughout the debt placement process. Our network extends beyond domestic lenders to include <strong>international private capital sources</strong>, giving us additional reach for transactions where conventional lenders fall short.</p>
+        </div>
+      </div>
+
+      <div class="about-pillars reveal reveal-delay-1">
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">Lender Relationships</div>
+            <p class="pillar-text">Direct access to debt funds, banks, insurance companies, and family offices actively deploying into multifamily.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">Execution Speed</div>
+            <p class="pillar-text">We move with urgency. Our lender network allows us to generate meaningful market response within days, not weeks.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">Multifamily Specialist</div>
+            <p class="pillar-text">Our exclusive focus on multifamily means deeper lender relationships, sharper market knowledge, and better outcomes for sponsors.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="pillar-title">Senior-Level Attention</div>
+            <p class="pillar-text">Every engagement is handled at the principal level. No hand-offs to junior staff mid-process.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact">
+    <p class="section-label reveal">Get in Touch</p>
+    <h2 class="cta-h2 reveal reveal-delay-1">Ready to place<br><em>your next deal?</em></h2>
+    <p class="cta-sub reveal reveal-delay-2">We engage selectively with multifamily sponsors and developers. Reach out to discuss your current or upcoming financing needs.</p>
+    <a href="https://calendly.com/tate-valcrestcapital/30min" target="_blank" class="btn-primary reveal reveal-delay-3">Contact Valcrest Capital</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Valcrest <span>Capital</span></div>
+        <div class="footer-tagline">Multifamily Debt Brokerage · Kansas City, MO</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <div class="footer-col-title">Navigation</div>
+          <a href="#services">Capabilities</a>
+          <a href="#engagements">Engagements</a>
+          <a href="#about">About</a>
+          <a href="/cdn-cgi/l/email-protection#06656968726765724670676a65746375726567766f72676a2865696b">Contact</a>
+        </div>
+        <div class="footer-col">
+          <div class="footer-col-title">Regulatory</div>
+          <a href="https://www.finalis.com/platform-disclaimers#privacy" target="_blank">Finalis Privacy Policy</a>
+          <a href="https://www.finalis.com/regulatory-disclaimers#business" target="_blank">Business Continuity Plan</a>
+          <a href="https://brokercheck.finra.org/" target="_blank">FINRA BrokerCheck</a>
+          <a href="https://www.finalis.com/regulatory-disclaimers?form-CRS" target="_blank">Form CRS</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <p>Securities are offered through Finalis Securities LLC Member FINRA / SIPC. Valcrest Capital is not a registered broker-dealer, and Finalis Securities LLC and Valcrest Capital are separate, unaffiliated entities. Finalis Securities LLC, Office of Supervisory Jurisdiction is located at 450 Lexington Ave, New York, NY 10017, 800-962-0418.</p>
+      <p>www.valcrestcapital.com is a website operated by Valcrest Capital. This website is for informational purposes only, is not an offer, solicitation, recommendation, or commitment for any transaction or to buy or sell any security or other financial product, and is not intended as investment advice. Investments involve risk and are not guaranteed to appreciate.</p>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Valcrest Capital. All rights reserved.</div>
+      <div class="footer-reg-links">
+        <a href="https://www.finalis.com/platform-disclaimers#privacy" target="_blank">Privacy</a>
+        <a href="https://brokercheck.finra.org/" target="_blank">BrokerCheck</a>
+        <a href="https://www.finalis.com/regulatory-disclaimers?form-CRS" target="_blank">Form CRS</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.body.classList.add('js-ready');
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new 
