@@ -661,6 +661,59 @@
       text-transform: uppercase;
     }
 
+    .platform {
+      background: var(--ink);
+      color: var(--white);
+    }
+
+    .platform .section-head p {
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .platform-intro {
+      max-width: 880px;
+      margin: -28px 0 42px auto;
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 17px;
+    }
+
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1px;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+
+    .platform-stat {
+      min-height: 190px;
+      padding: 24px 20px;
+      background: #101917;
+    }
+
+    .platform-stat strong {
+      display: block;
+      margin-bottom: 18px;
+      color: var(--signal);
+      font-size: clamp(34px, 4vw, 58px);
+      line-height: 0.95;
+    }
+
+    .platform-stat span {
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.35;
+      text-transform: uppercase;
+    }
+
+    .platform-note {
+      margin: 24px 0 0;
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
     .proof-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -750,16 +803,35 @@
     }
 
     .footer {
-      padding: 26px 0;
+      padding: 26px 0 34px;
       border-top: 1px solid rgba(255, 255, 255, 0.18);
       color: rgba(255, 255, 255, 0.62);
       font-size: 13px;
     }
 
     .footer .wrap {
+      display: grid;
+      gap: 18px;
+    }
+
+    .footer-topline {
       display: flex;
       justify-content: space-between;
       gap: 18px;
+    }
+
+    .broker-dealer-disclosure {
+      max-width: 980px;
+      margin: 0;
+      color: rgba(255, 255, 255, 0.52);
+      font-size: 12px;
+      line-height: 1.65;
+    }
+
+    .broker-dealer-disclosure a {
+      color: rgba(255, 255, 255, 0.72);
+      text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
     @media (max-width: 900px) {
@@ -837,7 +909,8 @@
       }
 
       .steps,
-      .proof-grid {
+      .proof-grid,
+      .platform-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -892,7 +965,7 @@
       }
 
       .hero-actions,
-      .footer .wrap {
+      .footer-topline {
         flex-direction: column;
       }
 
@@ -903,7 +976,8 @@
 
       .metric-row,
       .steps,
-      .proof-grid {
+      .proof-grid,
+      .platform-grid {
         grid-template-columns: 1fr;
       }
 
@@ -1040,7 +1114,7 @@
                 <div>
                   <span>Stabilized Multifamily</span>
                   <strong>Danville Multifamily</strong>
-                  <p>Stabilized multifamily images with an approximately $35 million senior financing request. Valcrest generated lender engagement from 14 capital sources in approximately 72 hours and received multiple competitive financing indications.</p>
+                  <p>Stabilized multifamily asset with an approximately $35 million senior financing request. Valcrest generated lender engagement from 14 capital sources in approximately 72 hours and received multiple competitive financing indications.</p>
                 </div>
               </div>
               <div class="record">
@@ -1130,6 +1204,45 @@
       </div>
     </section>
 
+    <section class="platform" id="platform" aria-labelledby="platform-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Broker-Dealer Platform</span>
+          <div>
+            <h2 id="platform-title">Institutional infrastructure. Entrepreneurial execution.</h2>
+            <p>Valcrest Capital conducts securities-related activities through GT Securities, Inc., a FINRA- and SIPC-member broker-dealer. The affiliation provides an established compliance and transaction infrastructure supporting independent investment bankers nationwide.</p>
+          </div>
+        </div>
+
+        <p class="platform-intro">The figures below are reported by GT Securities and reflect activity across the broader GT Securities platform—not transactions completed solely by Valcrest Capital.</p>
+
+        <div class="platform-grid" aria-label="GT Securities platform statistics">
+          <article class="platform-stat">
+            <strong>$50B+</strong>
+            <span>Transaction Volume Closed</span>
+          </article>
+          <article class="platform-stat">
+            <strong>22+</strong>
+            <span>Years in Business</span>
+          </article>
+          <article class="platform-stat">
+            <strong>2K+</strong>
+            <span>Transactions Completed</span>
+          </article>
+          <article class="platform-stat">
+            <strong>300+</strong>
+            <span>Affiliated Bankers</span>
+          </article>
+          <article class="platform-stat">
+            <strong>500+</strong>
+            <span>Current Mandates</span>
+          </article>
+        </div>
+
+        <p class="platform-note">GT Securities platform statistics are presented for informational purposes and are based on figures published by GT Securities. They do not represent Valcrest Capital's individual transaction history or guarantee future results.</p>
+      </div>
+    </section>
+
     <section aria-labelledby="proof-title">
       <div class="wrap">
         <div class="section-head">
@@ -1177,8 +1290,19 @@
       </div>
       <footer class="footer">
         <div class="wrap">
-          <span>Valcrest Capital</span>
-          <span>Commercial Real Estate Capital Advisory</span>
+          <div class="footer-topline">
+            <span>Valcrest Capital</span>
+            <span>Commercial Real Estate Capital Advisory</span>
+          </div>
+          <p class="broker-dealer-disclosure">
+            Securities offered through
+            <a href="https://gtsecurities.net/" target="_blank" rel="noopener noreferrer">GT Securities, Inc.</a>,
+            member
+            <a href="https://www.finra.org/" target="_blank" rel="noopener noreferrer">FINRA</a>
+            and
+            <a href="https://www.sipc.org/" target="_blank" rel="noopener noreferrer">SIPC</a>.
+            Valcrest Capital and GT Securities, Inc. are separate and unaffiliated entities.
+          </p>
         </div>
       </footer>
     </section>
