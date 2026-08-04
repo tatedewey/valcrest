@@ -1,1 +1,164 @@
-<h1>Valcrest Insights</h1>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Valcrest Capital insights on commercial real estate debt, JV equity, preferred equity, recapitalizations, and structured capital.">
+  <link rel="canonical" href="https://www.valcrestcapital.com/blog/">
+  <title>Valcrest Insights | Commercial Real Estate Capital</title>
+  <style>
+    :root {
+      --ink: #161b1e;
+      --muted: #6f6a61;
+      --paper: #f4efe5;
+      --white: #ffffff;
+      --line: rgba(22, 27, 30, 0.18);
+      --signal: #b89454;
+      --forest: #0e171b;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, calc(100% - 34px)); margin: 0 auto; }
+    header {
+      padding: 18px 0;
+      background: rgba(244, 239, 229, 0.96);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(12px);
+    }
+    nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 850; text-transform: uppercase; }
+    .brand img { width: 44px; height: 44px; object-fit: cover; border: 1px solid rgba(184,148,84,.5); }
+    .nav-links { display: flex; gap: 22px; color: var(--muted); font-size: 13px; font-weight: 800; text-transform: uppercase; }
+    .nav-links a:hover { color: var(--ink); }
+    .hero {
+      padding: 110px 0 90px;
+      color: var(--white);
+      background:
+        linear-gradient(90deg, rgba(14,23,27,.96), rgba(14,23,27,.76)),
+        url("../images/valcrest-hero.jpg") center / cover no-repeat;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--signal);
+      color: var(--signal);
+      font-size: 13px;
+      font-weight: 850;
+      text-transform: uppercase;
+    }
+    h1 { max-width: 850px; margin: 26px 0 22px; font-size: clamp(52px, 8vw, 92px); line-height: .95; }
+    .hero p { max-width: 730px; margin: 0; font-size: 20px; color: rgba(255,255,255,.82); }
+    main { padding: 82px 0 100px; }
+    .section-head { display: grid; grid-template-columns: 220px 1fr; gap: 42px; margin-bottom: 40px; }
+    .section-head h2 { margin: 0 0 12px; font-size: clamp(34px, 5vw, 56px); line-height: 1; }
+    .section-head p { margin: 0; color: var(--muted); max-width: 720px; }
+    .articles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .article-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 28px;
+      min-height: 310px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .article-card:hover { transform: translateY(-4px); box-shadow: 0 18px 45px rgba(35,39,37,.12); }
+    .tag { color: var(--signal); font-size: 12px; font-weight: 850; text-transform: uppercase; }
+    .article-card h3 { margin: 18px 0 14px; font-size: 28px; line-height: 1.05; }
+    .article-card p { color: var(--muted); margin-bottom: 24px; }
+    .read-more { font-weight: 850; font-size: 13px; text-transform: uppercase; }
+    .empty-note {
+      grid-column: 1 / -1;
+      padding: 28px;
+      border: 1px dashed var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.35);
+    }
+    footer { padding: 32px 0; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+    .footer-line { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    @media (max-width: 850px) {
+      .nav-links { display: none; }
+      .section-head { grid-template-columns: 1fr; gap: 18px; }
+      .articles { grid-template-columns: 1fr; }
+      .hero { padding: 84px 0 70px; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Valcrest Insights",
+    "url": "https://www.valcrestcapital.com/blog/",
+    "description": "Commercial real estate capital insights from Valcrest Capital.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Valcrest Capital",
+      "url": "https://www.valcrestcapital.com"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary navigation">
+        <a class="brand" href="../">
+          <img src="../images/valcrest-shield.jpg" alt="Valcrest Capital shield">
+          <span>Valcrest Capital</span>
+        </a>
+        <div class="nav-links">
+          <a href="../">Home</a>
+          <a href="../#services">Services</a>
+          <a href="../#about">About</a>
+          <a href="../#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Valcrest Insights</span>
+      <h1>Commercial real estate capital, explained clearly.</h1>
+      <p>Practical insights on debt, JV equity, preferred equity, recapitalizations, and the way institutional capital evaluates real estate opportunities.</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Latest Articles</span>
+        <div>
+          <h2>Insights for sponsors and owners.</h2>
+          <p>New articles will be published here covering capital structures, investor criteria, financing strategy, and real-world transaction considerations.</p>
+        </div>
+      </div>
+
+      <section class="articles" aria-label="Valcrest articles">
+        <div class="empty-note">Your first article will appear here next. The page is live and ready for the automated publishing system.</div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-line">
+        <strong>Valcrest Capital</strong>
+        <span>Commercial Real Estate Capital Advisory</span>
+      </div>
+      <p>Securities offered through GT Securities, Inc., member FINRA and SIPC. Valcrest Capital and GT Securities, Inc. are separate and unaffiliated entities.</p>
+    </div>
+  </footer>
+</body>
+</html>
