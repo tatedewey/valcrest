@@ -1,10 +1,392 @@
 [
-  {"topic":"Preferred Equity vs. Common Equity in Commercial Real Estate","category":"Equity Structures","summary":"Explain how sponsors should evaluate preferred equity and common equity based on cost, control, cash flow and risk."},
-  {"topic":"Why Institutional Investors Pass on Otherwise Good CRE Deals","category":"Institutional Equity","summary":"Explain mandate mismatch, basis, sponsor experience, structure, underwriting and presentation issues."},
-  {"topic":"How Commercial Real Estate Recapitalizations Work","category":"Recapitalizations","summary":"Explain liquidity events, replacing existing LPs, refinancing and selecting the right equity structure."},
-  {"topic":"What Sponsors Should Prepare Before Raising Institutional Equity","category":"Sponsor Preparation","summary":"Provide a practical checklist covering materials, track record, underwriting, data rooms and investor questions."},
-  {"topic":"How Investors Evaluate Small-Bay Industrial Opportunities","category":"Industrial","summary":"Discuss basis, tenant diversity, rollover, market depth, replacement cost and operating execution."},
-  {"topic":"The Commercial Real Estate Capital Stack Explained for Sponsors","category":"Capital Stack","summary":"Explain senior debt, mezzanine debt, preferred equity, common equity and how the layers interact."},
-  {"topic":"GP Equity, LP Equity and Co-GP Capital: What Is the Difference?","category":"Equity Structures","summary":"Clarify the roles, economics, control and use cases for GP, LP and co-GP capital."},
-  {"topic":"What Makes a CRE Development Opportunity Institutionally Marketable?","category":"Development","summary":"Discuss entitlements, GMP contracts, sponsor liquidity, basis, contingencies, market evidence and exit assumptions."}
+  {
+    "topic": "Preferred Equity vs. Common Equity in Commercial Real Estate",
+    "category": "Equity Structures",
+    "summary": "Explain how sponsors should evaluate preferred equity and common equity based on cost, control, cash flow and risk."
+  },
+  {
+    "topic": "Why Institutional Investors Pass on Otherwise Good CRE Deals",
+    "category": "Institutional Equity",
+    "summary": "Explain mandate mismatch, basis, sponsor experience, structure, underwriting and presentation issues."
+  },
+  {
+    "topic": "How Commercial Real Estate Recapitalizations Work",
+    "category": "Recapitalizations",
+    "summary": "Explain liquidity events, replacing existing LPs, refinancing and selecting the right equity structure."
+  },
+  {
+    "topic": "What Sponsors Should Prepare Before Raising Institutional Equity",
+    "category": "Sponsor Preparation",
+    "summary": "Provide a practical checklist covering materials, track record, underwriting, data rooms and investor questions."
+  },
+  {
+    "topic": "How Investors Evaluate Small-Bay Industrial Opportunities",
+    "category": "Industrial",
+    "summary": "Discuss basis, tenant diversity, rollover, market depth, replacement cost and operating execution."
+  },
+  {
+    "topic": "The Commercial Real Estate Capital Stack Explained for Sponsors",
+    "category": "Capital Stack",
+    "summary": "Explain senior debt, mezzanine debt, preferred equity, common equity and how the layers interact."
+  },
+  {
+    "topic": "GP Equity, LP Equity and Co-GP Capital: What Is the Difference?",
+    "category": "Equity Structures",
+    "summary": "Clarify the roles, economics, control and use cases for GP, LP and co-GP capital."
+  },
+  {
+    "topic": "What Makes a CRE Development Opportunity Institutionally Marketable?",
+    "category": "Development",
+    "summary": "Discuss entitlements, GMP contracts, sponsor liquidity, basis, contingencies, market evidence and exit assumptions."
+  },
+  {
+    "topic": "How to Find a Joint Venture Equity Partner for a Value-Add Multifamily Deal",
+    "category": "JV Equity",
+    "summary": "Step-by-step guidance on sourcing and vetting JV equity partners for value-add multifamily deals, including outreach channels, diligence checkpoints and term expectations.",
+    "primary_keyword": "find JV equity partner multifamily",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Structuring GP Promote in Multifamily Joint Ventures: Practical Terms Sponsors Should Use",
+    "category": "JV Equity",
+    "summary": "Explain common GP promote structures, catch points, and negotiation tips sponsors can use to balance upside and investor alignment in multifamily JVs.",
+    "primary_keyword": "GP promote structure multifamily joint venture",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "How Family Offices Underwrite Multifamily Investments: A Sponsor Guide",
+    "category": "Investor Relations",
+    "summary": "Outline the underwriting priorities, minimum materials and relationship factors family offices use when evaluating multifamily deals, helping sponsors tailor pitches.",
+    "primary_keyword": "how family offices underwrite multifamily investments",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Timeline and Process: How Long Does a CRE Equity Raise Typically Take?",
+    "category": "Timing & Process",
+    "summary": "Break down steps and realistic timelines for institutional and private equity raises, common bottlenecks and how sponsors can accelerate fundraising.",
+    "primary_keyword": "how long does a CRE equity raise take",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Where to Source LP Equity for Industrial Acquisitions in the Sun Belt",
+    "category": "Sourcing Capital",
+    "summary": "Identify the most productive channels—institutional LPs, family offices and regional investors—to target for industrial acquisition equity in Sun Belt markets.",
+    "primary_keyword": "LP equity for industrial acquisitions Sun Belt",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Typical Sponsor Co-Invest Requirements from Institutional Equity Partners",
+    "category": "Capital Raising",
+    "summary": "Summarize typical sponsor co-invest ranges, structural variations and negotiation strategies sponsors face when bringing institutional LPs into a deal.",
+    "primary_keyword": "sponsor co-invest requirements institutional equity",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Using Preferred Equity to Bridge an Acquisition Financing Gap on Multifamily Deals",
+    "category": "Capital Stack",
+    "summary": "Explore preferred equity structures that solve shortfalls at close, return expectations, and how preferred interacts with senior debt and LP capital.",
+    "primary_keyword": "preferred equity bridge acquisition financing gap multifamily",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How to Replace an Equity Investor Before Closing Without Derailing the Transaction",
+    "category": "Deal Solutions",
+    "summary": "Practical steps for sponsors to substitute an investor pre-closing, including legal considerations, interim capital options and communication strategies.",
+    "primary_keyword": "replace equity investor before closing",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "Financing Lease-Up Stage Multifamily Properties: Lender and Equity Approaches",
+    "category": "Debt & Financing",
+    "summary": "Compare debt and equity structures used to finance multifamily lease-up, including rent-up reserves, mezzanine options and investor expectations.",
+    "primary_keyword": "financing lease-up multifamily",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Bridge Loans vs. Construction Loans for Mid-Size Multifamily Renovations",
+    "category": "Comparison",
+    "summary": "Contrast bridge and construction loan features, pricing and suitability for mid-size multifamily rehab projects to help sponsors choose the right product.",
+    "primary_keyword": "bridge vs construction loans multifamily renovations",
+    "search_intent": "comparison"
+  },
+  {
+    "topic": "Recapitalization Strategies for Industrial Assets After Project Delays",
+    "category": "Deal Solutions",
+    "summary": "Actionable recapitalization options for industrial owners facing delayed business plans, including equity bridge, preferred recap and lender forbearance tactics.",
+    "primary_keyword": "recapitalization after business plan delays industrial",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How Much Sponsor Equity Is Typically Required for a Houston Multifamily Acquisition?",
+    "category": "Geographic",
+    "summary": "Provide Houston-specific sponsor equity norms, examples of common equity percentages and factors that change sponsor capital needs in that market.",
+    "primary_keyword": "sponsor equity required houston multifamily acquisition",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Designing an LP-Friendly Waterfall to Attract Institutional Partners",
+    "category": "JV Equity",
+    "summary": "Explain waterfall mechanics that appeal to institutional LPs while preserving sponsor economics, including hurdle structures and catch-up provisions.",
+    "primary_keyword": "structure LP-friendly waterfall institutional capital",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "How to Prepare Short-Form Offering Materials to Raise Equity Quickly",
+    "category": "Capital Raising",
+    "summary": "Checklist and examples of concise offering materials that satisfy institutional reviewers and speed the LP diligence process for rapid raises.",
+    "primary_keyword": "short-form offering materials raise equity quickly",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "Mezzanine vs. Preferred Equity for a Dallas Office-to-Multifamily Conversion",
+    "category": "Comparison",
+    "summary": "Compare mezzanine and preferred equity for conversion projects, focusing on cost, control, lender interplay and scenarios common to Dallas conversions.",
+    "primary_keyword": "mezzanine vs preferred equity office-to-multifamily conversion dallas",
+    "search_intent": "comparison"
+  },
+  {
+    "topic": "How to Size Debt and Equity for a Mixed-Use Development in Austin",
+    "category": "Capital Stack",
+    "summary": "Walk through methods to determine appropriate debt leverage and equity cushions for mixed-use developments in Austin, with sensitivity considerations.",
+    "primary_keyword": "size debt and equity mixed-use development austin",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "What Documents Investors Need Before Reviewing a Multifamily Acquisition",
+    "category": "High-Intent Questions",
+    "summary": "List and explain the essential due-diligence documents investors expect before committing time or capital to a multifamily acquisition review.",
+    "primary_keyword": "documents investors need before reviewing multifamily acquisition",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Financing Distressed CRE Acquisitions: Debt and Equity Structures That Work",
+    "category": "Deal Solutions",
+    "summary": "Detail practical capital structures—bridge equity, opportunistic LPs, special servicer strategies—that make distressed CRE acquisitions fundable.",
+    "primary_keyword": "financing distressed CRE acquisitions equity debt structures",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How Institutional Investors Assess Sponsor Track Record for Industrial Deals",
+    "category": "Investor Relations",
+    "summary": "Clarify the track record metrics, reporting items and portfolio evidence institutional investors prioritize when evaluating industrial sponsors.",
+    "primary_keyword": "how institutional investors assess sponsor track record industrial",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Capital Stack Options for Financing Last-Mile Industrial Properties",
+    "category": "Property Type",
+    "summary": "Survey typical and creative capital stack solutions for last-mile industrial assets, including sponsor equity, preferred equity and structured debt.",
+    "primary_keyword": "capital stack options last-mile industrial",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "When to Use Bridge Financing for a Tampa Multifamily Purchase",
+    "category": "Geographic",
+    "summary": "Explain scenarios where bridge loans make sense for Tampa multifamily purchases and the lender expectations and exit strategies sponsors should plan for.",
+    "primary_keyword": "when to use bridge financing tampa multifamily purchase",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "How to Fund Offline Units During a Multifamily Renovation",
+    "category": "Deal Solutions",
+    "summary": "Describe capital solutions and accounting practices to finance offline units during renovation without jeopardizing lender covenants or investor returns.",
+    "primary_keyword": "fund offline units multifamily renovation",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "What Family Offices Look For in a Value-Add Industrial Partnership",
+    "category": "Investor Relations",
+    "summary": "Highlight the partnership criteria, return targets and governance preferences family offices commonly seek in industrial value-add deals.",
+    "primary_keyword": "what family offices look for value-add industrial partnership",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Strategies to Close an Equity Gap on a Sponsor-Led Condo-to-Rental Conversion",
+    "category": "Deal Solutions",
+    "summary": "Practical financing and partnership strategies to close equity shortfalls for condo-to-rental conversions, including preferred equity and mezzanine options.",
+    "primary_keyword": "close equity gap condo-to-rental conversion",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How to Prepare a Financial Model That Passes Institutional Equity Diligence",
+    "category": "Capital Raising",
+    "summary": "Provide a sponsor-focused checklist of model assumptions, sensitivity scenarios and outputs institutional equity partners require during diligence.",
+    "primary_keyword": "prepare financial model institutional equity review",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Preferred Return vs. Equity Kicker: Structuring Returns for Retail Redevelopment Investors",
+    "category": "Comparison",
+    "summary": "Compare preferred return structures and equity kicker models for retail redevelopment investments, focusing on alignment with LP risk-return preferences.",
+    "primary_keyword": "preferred returns vs equity kicker retail redevelopment",
+    "search_intent": "comparison"
+  },
+  {
+    "topic": "Sourcing Equity for Mixed-Use Developments in Miami: Institutional and Family Office Channels",
+    "category": "Geographic",
+    "summary": "Actionable guidance for sponsors seeking institutional and family office equity for mixed-use projects in Miami, including target profiles and outreach tips.",
+    "primary_keyword": "sourcing equity mixed-use developments miami",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Financing a Value-Add Multifamily Rehab with Low Occupancy: Lender and Investor Solutions",
+    "category": "Deal Solutions",
+    "summary": "Outline financing options for low-occupancy rehabs, such as structured bridge debt, sponsor reserves, and equity with operating covenants to bridge performance gaps.",
+    "primary_keyword": "financing value-add multifamily rehab low occupancy",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How to Structure a Sponsor Buyout in a Recapitalization Without Alienating LPs",
+    "category": "Capital Stack",
+    "summary": "Explain sponsor buyout mechanics, valuation approaches and communication strategies that preserve LP relationships during a recapitalization.",
+    "primary_keyword": "structure sponsor buyout recapitalization",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "Non-Recourse vs. Recourse Financing for Florida Commercial Properties: Key Considerations",
+    "category": "Comparison",
+    "summary": "Compare non-recourse and recourse loan structures in the Florida market, including typical covenants, guaranty expectations and risk trade-offs for sponsors.",
+    "primary_keyword": "non-recourse vs recourse financing florida commercial properties",
+    "search_intent": "comparison"
+  },
+  {
+    "topic": "How to Attract Institutional Equity for Stabilized Multifamily Assets in Kansas City",
+    "category": "Geographic",
+    "summary": "Discuss data points, covenants and packaging sponsors should present to make stabilized Kansas City multifamily assets appealing to institutional LPs.",
+    "primary_keyword": "attract institutional equity stabilized multifamily kansas city",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Short-Term Bridge Strategies to Solve a Refinance Maturity Cliff",
+    "category": "Debt & Financing",
+    "summary": "Tactical bridge and interim financing options to cover a refinancing gap, plus lender negotiation tips and typical fee and maturity trade-offs.",
+    "primary_keyword": "bridge strategies refinance maturity cliff",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "What Investors Expect to See in an Offering Memorandum for Industrial Acquisitions",
+    "category": "Capital Raising",
+    "summary": "Detail the financials, market analysis and asset-level disclosures that institutional and private investors expect in an industrial offering memorandum.",
+    "primary_keyword": "what investors expect offering memorandum industrial acquisitions",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Negotiating Sponsor-Friendly LP Terms Without Losing Institutional Interest",
+    "category": "JV Equity",
+    "summary": "Tactics for sponsors to secure favorable LP terms—promotes, fees, call rights—while maintaining institutional investor comfort and dealability.",
+    "primary_keyword": "negotiate sponsor-friendly LP terms institutional capital",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Equity Raise Checklist to Close a Multifamily Acquisition in 30 Days",
+    "category": "Timing & Process",
+    "summary": "Actionable checklist and timeline that sponsors can follow to assemble equity commitments and close a multifamily acquisition within a 30-day window.",
+    "primary_keyword": "equity raise checklist close multifamily acquisition 30 days",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Capital Solutions for Financing a Sun Belt Self-Storage Development",
+    "category": "Property Type",
+    "summary": "Survey financing options appropriate for self-storage developments in the Sun Belt, including construction loans, mezzanine, and sponsor equity strategies.",
+    "primary_keyword": "capital solutions financing sun belt self-storage development",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "How to Market a Joint Venture Opportunity to Family Offices",
+    "category": "Sourcing Capital",
+    "summary": "Best practices for preparing materials and outreach approaches that resonate with family offices considering joint venture investments in CRE.",
+    "primary_keyword": "market joint venture opportunity family offices",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Refinancing an Office Building with Falling Cash Flow: Practical Options",
+    "category": "Deal Solutions",
+    "summary": "Lay out realistic recapitalization and refinancing paths—modification, bridge, partial recap—that owners can pursue when office cash flow weakens.",
+    "primary_keyword": "refinance office building falling cash flow options",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How to Structure Interim Preferred Equity to Close Quickly",
+    "category": "Capital Stack",
+    "summary": "Describe short-term preferred equity terms sponsors can use to bridge to long-term capital, including investor protections and exit triggers.",
+    "primary_keyword": "structure interim preferred equity rapid acquisition close",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "What Lenders Look For in Construction Loan Packages for Houston Industrial Projects",
+    "category": "Debt & Financing",
+    "summary": "List the underwriting documents, sponsor experience, budgets and pre-leasing metrics that matter most to construction lenders in Houston industrial deals.",
+    "primary_keyword": "what lenders look for construction loan packages houston industrial",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "Syndication vs. Single-LP Equity: Which Makes Sense for Your Multifamily Sponsor Strategy?",
+    "category": "Comparison",
+    "summary": "Compare the operational, governance and fundraising trade-offs between syndicating equity and securing single-LP partnerships for multifamily sponsors.",
+    "primary_keyword": "syndication vs single-LP equity multifamily sponsor",
+    "search_intent": "comparison"
+  },
+  {
+    "topic": "How to Evaluate Bridge Lenders When You Need a Fast Close",
+    "category": "Debt & Financing",
+    "summary": "Criteria and red flags to evaluate bridge lenders on speed, flexibility, terms, and operational track record when time to close is constrained.",
+    "primary_keyword": "evaluate bridge lenders fast close",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Capital Strategies for Financing Retail Repositioning in Orlando's Tourism Corridors",
+    "category": "Geographic",
+    "summary": "Practical capital approaches for retail repositioning in Orlando, including joint ventures, mezzanine and short-term loans tied to tourism recovery scenarios.",
+    "primary_keyword": "capital strategies financing retail repositioning orlando",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "How to Structure an Investor Update During a Troubled Refinance",
+    "category": "Investor Relations",
+    "summary": "Guidance on content, cadence and tone for investor communications when a refinance is at risk, aimed at preserving relationships and securing support.",
+    "primary_keyword": "structure investor update troubled refinance",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "Raising Equity for a Mixed-Income Multifamily Project: What Institutional LPs Require",
+    "category": "Equity Capital",
+    "summary": "Explain the underwriting criteria, return hurdles and social-impact metrics institutional LPs often require for mixed-income multifamily investments.",
+    "primary_keyword": "raising equity mixed-income multifamily institutional LPs",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "What to Do When a Lender Pulls Financing Days Before Closing",
+    "category": "Deal Solutions",
+    "summary": "Immediate tactical responses for sponsors—including backup financing, equity bridging and legal steps—to prevent a transaction collapse after a lender pullout.",
+    "primary_keyword": "lender pulls financing before closing what to do",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "How to Present a Sponsor Co-Invest Proposal to a Family Office",
+    "category": "Sourcing Capital",
+    "summary": "A template and persuasive points sponsors should use when proposing co-invest structures to family offices, focusing on alignment and risk mitigation.",
+    "primary_keyword": "present sponsor co-invest proposal family office",
+    "search_intent": "commercial"
+  },
+  {
+    "topic": "Financing Strategies for Last-Mile Industrial Lease-Up in the Southeast",
+    "category": "Property Type",
+    "summary": "Practical financing and equity options to support lease-up of last-mile industrial projects in Southeast markets, including staged draws and flexible covenants.",
+    "primary_keyword": "financing last-mile industrial lease-up southeast",
+    "search_intent": "informational-commercial"
+  },
+  {
+    "topic": "How to Use Preferred Equity to Preserve Sponsor GP Ownership in a Recapitalization",
+    "category": "Capital Stack",
+    "summary": "Discuss preferred equity structures and terms that allow sponsors to recapitalize without materially diluting GP ownership while meeting investor return targets.",
+    "primary_keyword": "use preferred equity avoid diluting sponsor GP ownership recap",
+    "search_intent": "problem-solving"
+  },
+  {
+    "topic": "Checklist: Documents Needed to Secure Institutional Equity for an Austin Development",
+    "category": "Geographic",
+    "summary": "A concise checklist of the legal, financial and market documents sponsors should prepare to attract institutional equity for developments in Austin.",
+    "primary_keyword": "documents needed secure institutional equity austin development",
+    "search_intent": "commercial"
+  }
 ]
