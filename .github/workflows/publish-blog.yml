@@ -31,7 +31,7 @@ jobs:
       - name: Generate article
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: gpt-5-mini
+          OPENAI_MODEL: gpt-5-nano
         run: python blog/_automation/generate_article.py
 
       - name: Commit article
