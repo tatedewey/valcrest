@@ -792,15 +792,16 @@ def article_template(
         "dateModified": today.isoformat(),
         "mainEntityOfPage": canonical,
         "author": {
-            "@type": "Person",
-            "name": PRIMARY_AUTHOR,
-            "jobTitle": "Co-Founder",
-            "worksFor": {
-                "@type": "Organization",
-                "name": "Valcrest Capital",
-                "url": SITE_URL,
-            },
-        },
+    "@type": "Person",
+    "name": PRIMARY_AUTHOR,
+    "url": f"{SITE_URL}/tate-dewey",
+    "jobTitle": "Co-Founder",
+    "worksFor": {
+        "@type": "Organization",
+        "name": "Valcrest Capital",
+        "url": SITE_URL,
+    },
+},
         "publisher": {
             "@type": "Organization",
             "name": "Valcrest Capital",
@@ -1024,7 +1025,7 @@ Insights
 </p>
 
 <div class="byline">
-By {PRIMARY_AUTHOR}, Co-Founder of Valcrest Capital · {published}
+By <a href="/tate-dewey">{PRIMARY_AUTHOR}</a>, Co-Founder of Valcrest Capital · {published}
 </div>
 
 </div>
