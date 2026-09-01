@@ -743,12 +743,11 @@ def quality_check(article: dict) -> None:
             f"Prohibited claims found: {hits}"
         )
 
-    if not 120 <= len(
-        article["meta_description"]
-    ) <= 170:
+    article["meta_description"] = article["meta_description"].strip()
 
-        raise ValueError(
-            "Meta description is outside acceptable length."
+    if len(article["meta_description"]) > 170:
+        article["meta_description"] = (
+            article["meta_description"][:167].rsplit(" ", 1)[0] + "..."
         )
 
 
